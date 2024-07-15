@@ -1,19 +1,25 @@
 <script>
   import { scaleLinear } from "d3";
+  import { tweened } from "svelte/motion";
   import Scrolly from "./helpers/Scrolly.svelte";
   import initialStageData from "./assets/stage_results.json";
   import riders from "./assets/riders.json";
   import StepCount from "./components/StepCount.svelte";
-
   import YScale from "./components/YScale.svelte";
+  import Flat from "./components/Flat.svelte";
+  import Hilly from "./components/Hilly.svelte";
+  import Mountain from "./components/Mountain.svelte";
+  import Rider from "./components/Rider.svelte";
 
   let width;
   let height;
 
-  const stageCount = Array(3);
-
   let renderedData = riders;
   let displayedResults;
+
+  const tweenedRank = tweened(3);
+
+  // $: console.log($tweenedValue);
 
   $: xScale = scaleLinear()
     .domain([0, 4])
@@ -53,7 +59,14 @@
     <div class="chart-container">
       <div class="chart" bind:clientWidth={width} bind:clientHeight={height}>
         <YScale {currentStep} {yScale} />
-        <svg width="50vw" height="100vh" class="viz">
+        <svg
+          width="50vw"
+          height="100vh"
+          class="viz"
+          style="background-color : {currentStep + 1 === 9
+            ? '#E5E1D5'
+            : '#615968'}"
+        >
           {#each renderedData as rider}
             <circle
               cx={xScale(rider.rank)}
@@ -61,27 +74,44 @@
               r="10"
               fill={rider.color}
             ></circle>
-            <text
-              dominant-baseline="middle"
-              fill="white"
-              x="20"
-              y="0"
-              transform="translate({xScale(rider.rank)},{yScale(
-                rider.time
-              )}) rotate(-90)">{rider.name}</text
-            >
+            <Rider {rider} {xScale} {yScale} />
+            <!-- {#if currentStep >= 0}
+              <text
+                dominant-baseline="middle"
+                fill="white"
+                x="20"
+                y="0"
+                transform="translate({xScale(rider.rank)},{yScale(
+                  rider.time
+                )}) rotate(-90)"
+              >
+                {rider.name}</text
+              >=
+            {/if} -->
           {/each}
         </svg>
       </div>
-      <StepCount {currentStep} {stageCount} {width} />
+      <StepCount {currentStep} stageCount={initialStageData} {width} />
     </div>
 
     <Scrolly bind:value={currentStep}>
-      {#each stageCount as stage, i}
+      {#each initialStageData as stage, i}
         <div class="step step{i + 1}" class:active={currentStep === i}>
-          <div class="step-content">
-            Etape {i + 1}
-          </div>
+          {#if stage.type === "flat"}
+            <Flat {width} {height} curentStage={stage.id} {initialStageData} />
+          {:else if stage.type === "hilly"}
+            <Hilly
+              {width}
+              {height}
+              curentStage={stage.id}
+              {initialStageData}
+            />{:else if stage.type === "mountain"}
+            <Mountain
+              {width}
+              {height}
+              curentStage={stage.id}
+              {initialStageData}
+            />{/if}
         </div>
       {/each}
     </Scrolly>
@@ -108,19 +138,14 @@
     position: relative;
     display: flex;
   }
-
   .viz {
-    background-color: #615968;
+    transition: background-color 800ms ease;
   }
 
   circle {
     transition:
       cx 500ms ease,
       cy 1500ms ease;
-  }
-
-  .viz text {
-    transition: transform 1500ms ease;
   }
 
   /* Scrollytelling CSS */
@@ -130,16 +155,7 @@
     display: flex;
     place-items: center;
     justify-content: center;
-    background-color: #478692;
     margin-left: auto;
     margin-right: 0;
-  }
-
-  .step1 {
-    background-color: #9cd067;
-  }
-
-  .step2 {
-    background-color: #609978;
   }
 </style>

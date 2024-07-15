@@ -1,46 +1,7 @@
 [
   {
-    "id": 0,
-    "riders": [
-      {
-        "id": 1,
-        "rank": 0.5,
-        "time": 90
-      },
-      {
-        "id": 8,
-        "rank": 1,
-        "time": 90
-      },
-      {
-        "id": 11,
-        "rank": 1.5,
-        "time": 90
-      },
-      {
-        "id": 71,
-        "rank": 2,
-        "time": 90
-      },
-      {
-        "id": 111,
-        "rank": 2.5,
-        "time": 90
-      },
-      {
-        "id": 181,
-        "rank": 3,
-        "time": 90
-      },
-      {
-        "id": 187,
-        "rank": 3.5,
-        "time": 90
-      }
-    ]
-  },
-  {
     "id": 1,
+    "type": "hilly",
     "riders": [
       {
         "id": 1,
@@ -81,6 +42,7 @@
   },
   {
     "id": 2,
+    "type": "hilly",
     "riders": [
       {
         "id": 1,
@@ -121,6 +83,7 @@
   },
   {
     "id": 3,
+    "type": "flat",
     "riders": [
       {
         "id": 1,
@@ -146,6 +109,498 @@
         "id": 111,
         "rank": 1,
         "time": 0
+      },
+      {
+        "id": 181,
+        "rank": 4,
+        "time": 140
+      },
+      {
+        "id": 187,
+        "rank": 4,
+        "time": 140
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "type": "mountain",
+    "riders": [
+      {
+        "id": 1,
+        "rank": 3,
+        "time": 50
+      },
+      {
+        "id": 8,
+        "rank": 4,
+        "time": 140
+      },
+      {
+        "id": 11,
+        "rank": 1,
+        "time": 0
+      },
+      {
+        "id": 71,
+        "rank": 2,
+        "time": 45
+      },
+      {
+        "id": 111,
+        "rank": 4,
+        "time": 140
+      },
+      {
+        "id": 181,
+        "rank": 4,
+        "time": 140
+      },
+      {
+        "id": 187,
+        "rank": 4,
+        "time": 140
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "type": "flat",
+    "riders": [
+      {
+        "id": 1,
+        "rank": 3,
+        "time": 50
+      },
+      {
+        "id": 8,
+        "rank": 4,
+        "time": 140
+      },
+      {
+        "id": 11,
+        "rank": 1,
+        "time": 0
+      },
+      {
+        "id": 71,
+        "rank": 2,
+        "time": 45
+      },
+      {
+        "id": 111,
+        "rank": 4,
+        "time": 140
+      },
+      {
+        "id": 181,
+        "rank": 4,
+        "time": 140
+      },
+      {
+        "id": 187,
+        "rank": 4,
+        "time": 140
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "type": "flat",
+    "riders": [
+      {
+        "id": 1,
+        "rank": 3,
+        "time": 50
+      },
+      {
+        "id": 8,
+        "rank": 4,
+        "time": 140
+      },
+      {
+        "id": 11,
+        "rank": 1,
+        "time": 0
+      },
+      {
+        "id": 71,
+        "rank": 2,
+        "time": 45
+      },
+      {
+        "id": 111,
+        "rank": 4,
+        "time": 140
+      },
+      {
+        "id": 181,
+        "rank": 4,
+        "time": 140
+      },
+      {
+        "id": 187,
+        "rank": 4,
+        "time": 140
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "type": "flat",
+    "riders": [
+      {
+        "id": 1,
+        "rank": 3,
+        "time": 75
+      },
+      {
+        "id": 8,
+        "rank": 4,
+        "time": 140
+      },
+      {
+        "id": 11,
+        "rank": 1,
+        "time": 0
+      },
+      {
+        "id": 71,
+        "rank": 2,
+        "time": 33
+      },
+      {
+        "id": 111,
+        "rank": 4,
+        "time": 140
+      },
+      {
+        "id": 181,
+        "rank": 4,
+        "time": 140
+      },
+      {
+        "id": 187,
+        "rank": 4,
+        "time": 140
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "type": "flat",
+    "riders": [
+      {
+        "id": 1,
+        "rank": 3,
+        "time": 75
+      },
+      {
+        "id": 8,
+        "rank": 4,
+        "time": 140
+      },
+      {
+        "id": 11,
+        "rank": 1,
+        "time": 0
+      },
+      {
+        "id": 71,
+        "rank": 2,
+        "time": 33
+      },
+      {
+        "id": 111,
+        "rank": 4,
+        "time": 140
+      },
+      {
+        "id": 181,
+        "rank": 4,
+        "time": 140
+      },
+      {
+        "id": 187,
+        "rank": 4,
+        "time": 140
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "type": "hilly",
+    "riders": [
+      {
+        "id": 1,
+        "rank": 3,
+        "time": 75
+      },
+      {
+        "id": 8,
+        "rank": 4,
+        "time": 140
+      },
+      {
+        "id": 11,
+        "rank": 1,
+        "time": 0
+      },
+      {
+        "id": 71,
+        "rank": 2,
+        "time": 33
+      },
+      {
+        "id": 111,
+        "rank": 4,
+        "time": 140
+      },
+      {
+        "id": 181,
+        "rank": 4,
+        "time": 140
+      },
+      {
+        "id": 187,
+        "rank": 4,
+        "time": 140
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "type": "flat",
+    "riders": [
+      {
+        "id": 1,
+        "rank": 3,
+        "time": 75
+      },
+      {
+        "id": 8,
+        "rank": 4,
+        "time": 140
+      },
+      {
+        "id": 11,
+        "rank": 1,
+        "time": 0
+      },
+      {
+        "id": 71,
+        "rank": 2,
+        "time": 33
+      },
+      {
+        "id": 111,
+        "rank": 4,
+        "time": 140
+      },
+      {
+        "id": 181,
+        "rank": 4,
+        "time": 140
+      },
+      {
+        "id": 187,
+        "rank": 4,
+        "time": 140
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "type": "mountain",
+    "riders": [
+      {
+        "id": 1,
+        "rank": 3,
+        "time": 74
+      },
+      {
+        "id": 8,
+        "rank": 4,
+        "time": 140
+      },
+      {
+        "id": 11,
+        "rank": 1,
+        "time": 0
+      },
+      {
+        "id": 71,
+        "rank": 2,
+        "time": 66
+      },
+      {
+        "id": 111,
+        "rank": 4,
+        "time": 140
+      },
+      {
+        "id": 181,
+        "rank": 4,
+        "time": 140
+      },
+      {
+        "id": 187,
+        "rank": 4,
+        "time": 140
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "type": "flat",
+    "riders": [
+      {
+        "id": 1,
+        "rank": 3,
+        "time": 74
+      },
+      {
+        "id": 8,
+        "rank": 4,
+        "time": 140
+      },
+      {
+        "id": 11,
+        "rank": 1,
+        "time": 0
+      },
+      {
+        "id": 71,
+        "rank": 2,
+        "time": 66
+      },
+      {
+        "id": 111,
+        "rank": 4,
+        "time": 140
+      },
+      {
+        "id": 181,
+        "rank": 4,
+        "time": 140
+      },
+      {
+        "id": 187,
+        "rank": 4,
+        "time": 140
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "type": "flat",
+    "riders": [
+      {
+        "id": 1,
+        "rank": 3,
+        "time": 74
+      },
+      {
+        "id": 8,
+        "rank": 4,
+        "time": 140
+      },
+      {
+        "id": 11,
+        "rank": 1,
+        "time": 0
+      },
+      {
+        "id": 71,
+        "rank": 2,
+        "time": 66
+      },
+      {
+        "id": 111,
+        "rank": 4,
+        "time": 140
+      },
+      {
+        "id": 181,
+        "rank": 4,
+        "time": 140
+      },
+      {
+        "id": 187,
+        "rank": 4,
+        "time": 140
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "type": "mountain",
+    "riders": [
+      {
+        "id": 1,
+        "rank": 2,
+        "time": 117
+      },
+      {
+        "id": 8,
+        "rank": 4,
+        "time": 140
+      },
+      {
+        "id": 11,
+        "rank": 1,
+        "time": 0
+      },
+      {
+        "id": 71,
+        "rank": 3,
+        "time": 142
+      },
+      {
+        "id": 111,
+        "rank": 4,
+        "time": 140
+      },
+      {
+        "id": 181,
+        "rank": 4,
+        "time": 140
+      },
+      {
+        "id": 187,
+        "rank": 4,
+        "time": 140
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "type": "mountain",
+    "riders": [
+      {
+        "id": 1,
+        "rank": 2,
+        "time": 189
+      },
+      {
+        "id": 8,
+        "rank": 4,
+        "time": 140
+      },
+      {
+        "id": 11,
+        "rank": 1,
+        "time": 0
+      },
+      {
+        "id": 71,
+        "rank": 3,
+        "time": 319
+      },
+      {
+        "id": 111,
+        "rank": 4,
+        "time": 140
       },
       {
         "id": 181,

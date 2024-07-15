@@ -5,7 +5,12 @@
   let yTicks = [0, 60, 120];
 </script>
 
-<svg width="25vw" height="100vh" class="scale">
+<svg
+  width="25vw"
+  height="100vh"
+  class="scale"
+  style="background-color : {currentStep + 1 === 9 ? '#E5E1D5' : '#615968'}"
+>
   {#if currentStep >= 0}
     {#each yTicks as tick}
       {#if tick === 0}
@@ -42,6 +47,6 @@
 
 <style>
   .scale {
-    background-color: #615968;
+    transition: background-color 800ms ease;
   }
 </style>

@@ -4,7 +4,7 @@
   export let width;
   import { scaleLinear } from "d3";
 
-  $: console.log(stageScale(2));
+  //   $: console.log(stageScale(2));
 
   $: stageScale = scaleLinear()
     .domain([1, stageCount.length])
