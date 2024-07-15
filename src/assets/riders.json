@@ -1,1 +1,58 @@
-[]
+[
+  {
+    "id": 1,
+    "name": "J. VINGEGAARD",
+    "team": "TVL",
+    "color": "#1586D7",
+    "rank": 0.5,
+    "time": 90
+  },
+  {
+    "id": 8,
+    "name": "W. VAN AERT",
+    "team": "TVL",
+    "color": "#1586D7",
+    "rank": 1,
+    "time": 90
+  },
+  {
+    "id": 11,
+    "name": "T. POGACAR",
+    "team": "UAE",
+    "color": "white",
+    "rank": 1.5,
+    "time": 90
+  },
+  {
+    "id": 71,
+    "name": "R. EVENEPOEL",
+    "team": "SQS",
+    "color": "blue",
+    "rank": 2,
+    "time": 90
+  },
+  {
+    "id": 111,
+    "name": "R. CARAPAZ",
+    "team": "EFE",
+    "color": "pink",
+    "rank": 2.5,
+    "time": 90
+  },
+  {
+    "id": 181,
+    "name": "R. BARDET",
+    "team": "AAA",
+    "color": "orange",
+    "rank": 3,
+    "time": 90
+  },
+  {
+    "id": 187,
+    "name": "F. VAN DEN BROEK",
+    "team": "AAA",
+    "color": "orange",
+    "rank": 3.5,
+    "time": 90
+  }
+]
