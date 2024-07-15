@@ -1,20 +1,19 @@
 <script>
   import { scaleLinear } from "d3";
   import Scrolly from "./helpers/Scrolly.svelte";
+  import initialStageData from "./assets/stage_results.json";
 
   let width;
   let height;
 
-  let data = [
-    { rank: 2, time: 100, color: "yellow" },
-    { rank: 2, time: 100, color: "black" },
-    { rank: 2, time: 100, color: "blue" },
-  ];
+  // console.log(initialStageData[0].riders);
+
+  let randeredStageData = initialStageData[0].riders;
 
   // let randeredData = data
 
   $: xScale = scaleLinear()
-    .domain([1, 3])
+    .domain([0, 4])
     .range([40, width - 40]);
 
   $: yScale = scaleLinear()
@@ -23,34 +22,15 @@
 
   let currentStep;
 
-  $: console.log(currentStep);
-
   $: {
     if (currentStep === undefined) {
-      data = [
-        { rank: 2, time: 100, color: "yellow" },
-        { rank: 2, time: 100, color: "black" },
-        { rank: 2, time: 100, color: "blue" },
-      ];
-    }
-    if (currentStep === 0) {
-      data = [
-        { rank: 1, time: 0, color: "yellow" },
-        { rank: 2, time: 20, color: "black" },
-        { rank: 3, time: 50, color: "blue" },
-      ];
-    } else if (currentStep === 1) {
-      data = [
-        { rank: 1, time: 0, color: "yellow" },
-        { rank: 2, time: 40, color: "black" },
-        { rank: 3, time: 90, color: "blue" },
-      ];
-    } else if (currentStep === 2) {
-      data = [
-        { rank: 2, time: 30, color: "yellow" },
-        { rank: 1, time: 0, color: "black" },
-        { rank: 3, time: 200, color: "blue" },
-      ];
+      randeredStageData = initialStageData[0].riders;
+    } else {
+      initialStageData.map((stage) => {
+        if (stage.id === currentStep + 1) {
+          randeredStageData = stage.riders;
+        }
+      });
     }
   }
 </script>
@@ -61,12 +41,12 @@
     <div class="chart" bind:clientWidth={width} bind:clientHeight={height}>
       <div class="position: relative">
         <svg width="50vw" height="100vh">
-          {#each data as rider}
+          {#each randeredStageData as rider}
             <circle
               cx={xScale(rider.rank)}
               cy={yScale(rider.time)}
               r="20"
-              fill={rider.color}
+              fill="white"
             ></circle>
           {/each}
         </svg>
@@ -108,7 +88,7 @@
   }
 
   svg {
-    background-color: purple;
+    background-color: #5c5c5c;
   }
 
   .stage {
@@ -119,7 +99,7 @@
 
   circle {
     transition:
-      cx 500ms ease,
+      cx 2000ms ease,
       cy 2000ms ease;
   }
 
@@ -130,32 +110,16 @@
     display: flex;
     place-items: center;
     justify-content: center;
-    background-color: red;
+    background-color: #478692;
     margin-left: auto;
     margin-right: 0;
   }
 
   .step1 {
-    background-color: green;
+    background-color: #9cd067;
   }
 
   .step2 {
-    background-color: aqua;
+    background-color: #609978;
   }
-
-  /* .step-content {
-    color: #ccc;
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transition: background 500ms ease;
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
-    z-index: 10;
-  }*/
-
-  /* .step.active {
-    background-color: #5c5c5c00;
-  } */
 </style>
