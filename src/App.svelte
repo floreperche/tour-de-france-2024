@@ -1,7 +1,6 @@
 <script>
   import { scaleLinear } from "d3";
   import Scrolly from "./helpers/Scrolly.svelte";
-  import { forceSimulation, forceX, forceY, forceCollide } from "d3";
   import initialStageData from "./assets/stage_results.json";
   import riders from "./assets/riders.json";
   import StepCount from "./components/StepCount.svelte";
@@ -17,40 +16,17 @@
   let renderedData = riders;
   let displayedResults;
 
+  let maxYScale = 130;
+
   $: xScale = scaleLinear()
     .domain([0, 4])
-    .range([40, width / 2 - 40]);
+    .range([30, width / 2 - 40]);
 
   $: yScale = scaleLinear()
-    .domain([0, 130])
+    .domain([0, maxYScale])
     .range([height - 150, 10]);
 
   let currentStep;
-
-  let simulation = forceSimulation(renderedData);
-  let nodes = [];
-  simulation.on("tick", () => {
-    nodes = simulation.nodes();
-  });
-
-  // $: {
-  //   simulation
-  //     .force(
-  //       "x",
-  //       forceX()
-  //         .x((d) => xScale(d.rank))
-  //         .strength(0.8)
-  //     )
-  //     .force(
-  //       "y",
-  //       forceY()
-  //         .y((d) => yScale(d.time))
-  //         .strength(0.1)
-  //     )
-  //     .force("collide", forceCollide().radius(10))
-  //     .alpha(0.2)
-  //     .alphaDecay(0.0005);
-  // }
 
   $: {
     if (currentStep === undefined) {
@@ -68,10 +44,13 @@
           time: displayedResults[i].time,
         };
       });
+      if (currentStep > 11) {
+        maxYScale = 560;
+      } else {
+        maxYScale = 130;
+      }
     }
   }
-
-  // $: console.log(nodes);
 </script>
 
 <div class="container">
@@ -79,7 +58,7 @@
   <section>
     <div class="chart-container">
       <div class="chart" bind:clientWidth={width} bind:clientHeight={height}>
-        <YScale {currentStep} {yScale} />
+        <YScale {currentStep} {maxYScale} {height} />
         <svg
           width="50vw"
           height="100vh"
@@ -88,84 +67,16 @@
             ? '#E5E1D5'
             : '#615968'}"
         >
+          <line
+            x1={width / 2 - 20}
+            x2={width / 2 - 20}
+            y1={0}
+            y2={height}
+            stroke="white"
+            stroke-width="3"
+          ></line>
           {#each renderedData as rider}
-            <ellipse
-              cx={xScale(rider.rank)}
-              cy={yScale(rider.time)}
-              rx="6.40862"
-              ry="0.610345"
-              fill="black"
-            />
-            <ellipse
-              cx={xScale(rider.rank)}
-              cy={yScale(rider.time)}
-              rx="0.610345"
-              ry="8.4431"
-              fill="#121313"
-            />
-            <ellipse
-              cx={xScale(rider.rank)}
-              cy={yScale(rider.time)}
-              rx="1.01724"
-              ry="3.3569"
-              fill="#488836"
-            />
-            <ellipse
-              cx={xScale(rider.rank)}
-              cy={yScale(rider.time) - 42.12}
-              rx="0.610345"
-              ry="8.4431"
-              fill="#121313"
-            />
-            <ellipse
-              cx={xScale(rider.rank)}
-              cy={yScale(rider.time) - 42.12}
-              rx="1.01724"
-              ry="3.3569"
-              fill="#121313"
-            />
-            <ellipse
-              cx={xScale(rider.rank) + 4.07}
-              cy={yScale(rider.time) - 12.72}
-              rx="0.610345"
-              ry="13.4276"
-              fill="#BC7863"
-            />
-            <ellipse
-              cx={xScale(rider.rank) - 4.07}
-              cy={yScale(rider.time) - 12.72}
-              rx="0.610345"
-              ry="13.4276"
-              fill="#BC7863"
-            />
-            <ellipse
-              cx={xScale(rider.rank)}
-              cy={yScale(rider.time) - 22.79}
-              rx="5.08621"
-              ry="10.4776"
-              fill={rider.color}
-            />
-            <circle
-              cx={xScale(rider.rank)}
-              cy={yScale(rider.time) - 12.11}
-              r="2.84828"
-              fill="#121313"
-            />
-
-            <!-- <Rider {rider} /> -->
-            <!-- {#if currentStep >= 0}
-              <text
-                dominant-baseline="middle"
-                fill="white"
-                x="20"
-                y="0"
-                transform="translate({xScale(rider.rank)},{yScale(
-                  rider.time
-                )}) rotate(-90)"
-              >
-                {rider.name}</text
-              >=
-            {/if} -->
+            <Rider {rider} {xScale} {yScale} {currentStep} />
           {/each}
         </svg>
       </div>
@@ -218,13 +129,6 @@
   }
   .viz {
     transition: background-color 800ms ease;
-  }
-
-  ellipse,
-  circle {
-    transition:
-      cx 500ms ease,
-      cy 1500ms ease;
   }
 
   /* Scrollytelling CSS */

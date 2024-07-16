@@ -1,8 +1,23 @@
 <script>
   export let currentStep;
-  export let yScale;
+  export let maxYScale;
+  export let height;
+  import { tweened } from "svelte/motion";
+  import { cubicInOut } from "svelte/easing";
+  import { scaleLinear } from "d3";
 
-  let yTicks = [0, 60, 120];
+  $: yScale = scaleLinear()
+    .domain([0, $tYScale])
+    .range([height - 150, 10]);
+
+  const tYScale = tweened(undefined, {
+    duration: 2000,
+    easing: cubicInOut,
+  });
+
+  $: tYScale.set(maxYScale);
+
+  $: yTicks = [0, 60, 120];
 </script>
 
 <svg
