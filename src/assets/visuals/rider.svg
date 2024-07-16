@@ -1,12 +1,11 @@
-<svg width="62" height="293" viewBox="0 0 62 293" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M31.0996 211.625L31.0996 289.679" stroke="#121313" stroke-width="6.24435" stroke-linecap="round"/>
-<path d="M31.0996 4L31.0996 82.0544" stroke="#121313" stroke-width="6.24435" stroke-linecap="round"/>
-<path d="M3 250.652H59.1991" stroke="#121313" stroke-width="4.68326" stroke-linecap="round"/>
-<ellipse cx="31.0995" cy="251.432" rx="4.68326" ry="16.3914" fill="#121313"/>
-<ellipse cx="31.0995" cy="43.8077" rx="4.68326" ry="16.3914" fill="#121313"/>
-<ellipse cx="31.0996" cy="139.034" rx="24.9774" ry="50.7353" fill="#D8B94C"/>
-<circle cx="31.8801" cy="190.55" r="14.8303" fill="#121313"/>
-<path d="M11.5859 250.652C8.2824 250.652 9.44123 144.498 9.44123 144.498H13.7305C13.7305 144.498 14.8893 250.652 11.5859 250.652Z" fill="#BC7863"/>
-<path d="M50.6132 250.652C47.3097 250.652 48.4686 144.498 48.4686 144.498H52.7578C52.7578 144.498 53.9167 250.652 50.6132 250.652Z" fill="#BC7863"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M55.8428 130.355H6.4762C8.32546 106.043 18.6724 87.4297 31.1595 87.4297C43.6466 87.4297 53.9935 106.043 55.8428 130.355Z" fill="#121313"/>
+<svg width="13" height="59" viewBox="0 0 13 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="6.40862" cy="50.4552" rx="6.40862" ry="0.610345" fill="black"/>
+<ellipse cx="6.51037" cy="50.5569" rx="0.610345" ry="8.4431" fill="#121313"/>
+<ellipse cx="6.51041" cy="50.5568" rx="1.01724" ry="3.3569" fill="#488836"/>
+<ellipse cx="6.51037" cy="8.4431" rx="0.610345" ry="8.4431" fill="#121313"/>
+<ellipse cx="6.51041" cy="8.44308" rx="1.01724" ry="3.3569" fill="#121313"/>
+<ellipse cx="10.5793" cy="37.8414" rx="0.610345" ry="13.4276" fill="#BC7863"/>
+<ellipse cx="2.4414" cy="37.8414" rx="0.610345" ry="13.4276" fill="#BC7863"/>
+<ellipse cx="6.5104" cy="27.7707" rx="5.08621" ry="10.4776" fill="#ECB70C"/>
+<circle cx="6.51039" cy="38.4517" r="2.84828" fill="#121313"/>
 </svg>
