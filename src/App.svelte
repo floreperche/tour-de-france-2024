@@ -53,7 +53,10 @@
   }
 </script>
 
-<div class="container">
+<div class="container" style="position: relative">
+  <div
+    style="position: absolute; width: 25vw; height: 100vh; top :100vh; right: 0; background-color: red; "
+  ></div>
   <Header />
 
   <section>
@@ -107,6 +110,7 @@
       {/each}
     </Scrolly>
   </section>
+
   <!-- <div>END</div> -->
 </div>
 
