@@ -3,7 +3,7 @@
   import Scrolly from "./helpers/Scrolly.svelte";
   import initialStageData from "./assets/stage_results.json";
   import riders from "./assets/riders.json";
-  import StepCount from "./components/StepCount.svelte";
+  import Header from "./components/Header.svelte";
   import YScale from "./components/YScale.svelte";
   import Flat from "./components/Flat.svelte";
   import Hilly from "./components/Hilly.svelte";
@@ -24,7 +24,7 @@
 
   $: yScale = scaleLinear()
     .domain([0, maxYScale])
-    .range([height - 150, 10]);
+    .range([height - 100, 10]);
 
   let currentStep;
 
@@ -54,19 +54,13 @@
 </script>
 
 <div class="container">
-  <div class="header"></div>
+  <Header />
+
   <section>
     <div class="chart-container">
       <div class="chart" bind:clientWidth={width} bind:clientHeight={height}>
         <YScale {currentStep} {maxYScale} {height} />
-        <svg
-          width="50vw"
-          height="100vh"
-          class="viz"
-          style="background-color : {currentStep + 1 === 9
-            ? '#E5E1D5'
-            : '#615968'}"
-        >
+        <svg width="50vw" height="100vh" class="viz">
           <line
             x1={width / 2 - 20}
             x2={width / 2 - 20}
@@ -80,25 +74,33 @@
           {/each}
         </svg>
       </div>
-      <StepCount {currentStep} stageCount={initialStageData} {width} />
+      <!-- <StepCount {currentStep} stageCount={initialStageData} {width} /> -->
     </div>
 
     <Scrolly bind:value={currentStep}>
       {#each initialStageData as stage, i}
         <div class="step step{i + 1}" class:active={currentStep === i}>
           {#if stage.type === "flat"}
-            <Flat {width} {height} curentStage={stage.id} {initialStageData} />
+            <Flat
+              {width}
+              {height}
+              curentStage={stage.id}
+              {currentStep}
+              {initialStageData}
+            />
           {:else if stage.type === "hilly"}
             <Hilly
               {width}
               {height}
               curentStage={stage.id}
+              {currentStep}
               {initialStageData}
             />{:else if stage.type === "mountain"}
             <Mountain
               {width}
               {height}
               curentStage={stage.id}
+              {currentStep}
               {initialStageData}
             />{/if}
         </div>
@@ -109,9 +111,7 @@
 </div>
 
 <style>
-  .header {
-    height: 100vh;
-    width: 100vw;
+  .container {
     background-color: #615968;
   }
 
@@ -134,10 +134,10 @@
   /* Scrollytelling CSS */
   .step {
     height: 150vh;
-    width: 25vw;
+    width: 100vw;
     display: flex;
     place-items: center;
-    justify-content: center;
+    justify-content: end;
     margin-left: auto;
     margin-right: 0;
   }

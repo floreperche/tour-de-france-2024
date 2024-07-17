@@ -2,6 +2,7 @@
   export let width;
   export let height;
   export let curentStage;
+  export let currentStep;
   export let initialStageData;
   import { scaleLinear } from "d3";
 
@@ -42,25 +43,54 @@
   });
 </script>
 
-<div class="step-content" style="background: {background} ">
-  <svg>
-    {#if hillData}
-      {#each hillData as hill}<g
-          transform="translate({xHillScale(hill.x)},{yHillScale(hill.y)})"
-          ><path
-            d="M0 86.5C0 38.7274 38.7274 0 86.5 0V0C134.273 0 173 38.7274 173 86.5V130H0V86.5Z"
-            fill={colorHillScale(hill.color)}
-          />
-        </g>{/each}
+<div class="step-content">
+  <div class="step-count">
+    <svg>
+      <text
+        x={width / 4}
+        y={50}
+        fill="white"
+        text-anchor="middle"
+        font-size="38"
+        opacity="0.7">STAGE {curentStage}</text
+      >
+    </svg>
+  </div>
+  <div class="landscape" style="background: {background}">
+    {#if curentStage === currentStep + 1 || curentStage === currentStep || curentStage === currentStep + 2}
+      <svg>
+        {#if hillData}
+          {#each hillData as hill}<g
+              transform="translate({xHillScale(hill.x)},{yHillScale(hill.y)})"
+              ><path
+                d="M0 86.5C0 38.7274 38.7274 0 86.5 0V0C134.273 0 173 38.7274 173 86.5V130H0V86.5Z"
+                fill={colorHillScale(hill.color)}
+              />
+            </g>{/each}
+        {/if}
+      </svg>
     {/if}
-  </svg>
+  </div>
 </div>
 
 <style>
   .step-content {
     width: 100%;
     height: 100%;
-    background-color: #609978;
+    display: flex;
+    place-items: center;
+    justify-content: end;
+  }
+
+  .landscape {
+    width: 25%;
+    height: 100%;
+  }
+  .step-count {
+    width: 50%;
+    height: 100%;
+    font-family: "Luckiest Guy", cursive;
+    font-size: 38px;
   }
 
   svg {

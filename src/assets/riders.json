@@ -5,14 +5,14 @@
     "team": "TVL",
     "color": "#22489B",
     "rank": 0.5,
-    "time": 90
+    "time": 100
   },
   {
     "id": 8,
     "name": "W. VAN AERT",
     "team": "TVL",
     "color": "#22489B",
-    "rank": 1,
+    "rank": 1.01,
     "time": 90
   },
   {
@@ -21,30 +21,30 @@
     "team": "UAE",
     "color": "white",
     "rank": 1.5,
-    "time": 90
+    "time": 100
   },
   {
     "id": 71,
     "name": "R. EVENEPOEL",
     "team": "SQS",
     "color": "blue",
-    "rank": 2,
-    "time": 90
+    "rank": 2.5,
+    "time": 100
   },
   {
     "id": 111,
     "name": "R. CARAPAZ",
     "team": "EFE",
     "color": "pink",
-    "rank": 2.5,
-    "time": 90
+    "rank": 3.5,
+    "time": 100
   },
   {
     "id": 181,
     "name": "R. BARDET",
     "team": "AAA",
     "color": "orange",
-    "rank": 3,
+    "rank": 2,
     "time": 90
   },
   {
@@ -52,7 +52,7 @@
     "name": "F. VAN DEN BROEK",
     "team": "AAA",
     "color": "orange",
-    "rank": 3.5,
+    "rank": 3,
     "time": 90
   }
 ]

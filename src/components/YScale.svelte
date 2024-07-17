@@ -8,7 +8,7 @@
 
   $: yScale = scaleLinear()
     .domain([0, $tYScale])
-    .range([height - 150, 10]);
+    .range([height - 100, 10]);
 
   const tYScale = tweened(undefined, {
     duration: 2000,
@@ -20,12 +20,7 @@
   $: yTicks = [0, 60, 120];
 </script>
 
-<svg
-  width="25vw"
-  height="100vh"
-  class="scale"
-  style="background-color : {currentStep + 1 === 9 ? '#E5E1D5' : '#615968'}"
->
+<svg width="25vw" height="100vh" class="scale">
   {#if currentStep >= 0}
     {#each yTicks as tick}
       {#if tick === 0}
