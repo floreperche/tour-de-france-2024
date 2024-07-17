@@ -23,7 +23,7 @@
 
 <!-- <circle cx={rider.x} cy= r="10" fill={rider.color}></circle> -->
 
-<g transform="translate({$tX - 13},{$tY - 110}) ">
+<g transform="translate({$tX - 13},{$tY - 90}) ">
   <path
     fill-rule="evenodd"
     clip-rule="evenodd"
@@ -180,7 +180,7 @@
     fill="white"
     x="20"
     y="0"
-    transform="translate({$tX},{$tY - 100}) rotate(-90)"
+    transform="translate({$tX},{$tY - 90}) rotate(-90)"
   >
     {rider.name}</text
   >=

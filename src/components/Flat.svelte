@@ -37,13 +37,22 @@
 <div class="step-content">
   <div class="step-count">
     <svg>
+      <line
+        x1={width / 4 - 60}
+        x2={width / 4 + 60}
+        y1={50}
+        y2={50}
+        stroke="white"
+        stroke-width="4"
+        opacity="0.5"
+      ></line>
       <text
         x={width / 4}
-        y={50}
+        y={100}
         fill="white"
         text-anchor="middle"
         font-size="38"
-        opacity="0.7">STAGE {curentStage}</text
+        opacity="0.5">STAGE {curentStage}</text
       >
     </svg>
   </div>
@@ -83,7 +92,7 @@
   .step-count {
     width: 50%;
     height: 100%;
-    font-family: "Luckiest Guy", cursive;
+    font-family: "Caveat Brush", cursive;
     font-size: 38px;
   }
 

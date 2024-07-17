@@ -58,7 +58,7 @@
     width: 200px;
     padding: 2px 6px;
     margin: 0 auto;
-    font-family: "Luckiest Guy", cursive;
+    font-family: "Caveat Brush", cursive;
     font-size: 36px;
     letter-spacing: 3.5px;
   }
@@ -79,7 +79,7 @@
   }
 
   .scroll-indicator p {
-    font-family: "Luckiest Guy", cursive;
+    font-family: "Caveat Brush", cursive;
     font-size: 20px;
     color: white;
   }

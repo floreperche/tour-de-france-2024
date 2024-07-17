@@ -20,7 +20,7 @@
 
   $: xScale = scaleLinear()
     .domain([0, 4])
-    .range([30, width / 2 - 40]);
+    .range([20, width / 2 - 20]);
 
   $: yScale = scaleLinear()
     .domain([0, maxYScale])
@@ -54,9 +54,7 @@
 </script>
 
 <div class="container" style="position: relative">
-  <div
-    style="position: absolute; width: 25vw; height: 100vh; top :100vh; right: 0; background-color: red; "
-  ></div>
+  <div class="initial-landscape"></div>
   <Header />
 
   <section>
@@ -65,12 +63,13 @@
         <YScale {currentStep} {maxYScale} {height} />
         <svg width="50vw" height="100vh" class="viz">
           <line
-            x1={width / 2 - 20}
-            x2={width / 2 - 20}
+            x1={width / 2 - 14}
+            x2={width / 2 - 14}
             y1={0}
             y2={height}
             stroke="white"
             stroke-width="3"
+            opacity="0.5"
           ></line>
           {#each renderedData as rider}
             <Rider {rider} {xScale} {yScale} {currentStep} />
@@ -115,6 +114,14 @@
 </div>
 
 <style>
+  .initial-landscape {
+    position: absolute;
+    width: 25vw;
+    height: 100vh;
+    top: 100vh;
+    right: 0;
+    background: linear-gradient(#615968 85%, #609978);
+  }
   .container {
     background-color: #615968;
   }
