@@ -59,9 +59,15 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 50vh;
+    background: linear-gradient(#cce0e3 90%, #615968);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .header .title {
+    padding-top: 4vh;
     padding-top: 4vh;
     display: flex;
     flex-direction: column;
@@ -75,7 +81,19 @@
     margin: 0 auto;
     font-family: "Caveat Brush", cursive;
     font-size: 50px;
+    font-size: 50px;
     letter-spacing: 3.5px;
+    text-align: justify;
+    color: #50495f;
+  }
+
+  .header .title .subtitle {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0px;
+    text-transform: uppercase;
+    padding-top: 8px;
     text-align: justify;
     color: #50495f;
   }
@@ -90,6 +108,7 @@
   }
 
   .description {
+    height: 40vh;
     height: 40vh;
     padding: 2em;
     color: white;
