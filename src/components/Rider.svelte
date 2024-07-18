@@ -2,7 +2,7 @@
   export let rider;
   export let xScale;
   export let yScale;
-  export let currentStep;
+  export let curentStep;
   import { tweened } from "svelte/motion";
   import { cubicInOut } from "svelte/easing";
 
@@ -174,7 +174,7 @@
     </filter>
   </defs>
 </g>
-{#if currentStep >= 0 && rider.rank <= 3}
+{#if curentStep >= 0 && rider.rank <= 3}
   <text
     dominant-baseline="middle"
     fill="white"
@@ -185,3 +185,10 @@
     {rider.name}</text
   >=
 {/if}
+
+<style>
+  g {
+    -webkit-filter: drop-shadow(3px -3px 4px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(3px -3px 4px rgba(0, 0, 0, 0.2));
+  }
+</style>

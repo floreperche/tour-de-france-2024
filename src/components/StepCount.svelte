@@ -1,5 +1,5 @@
 <script>
-  export let currentStep;
+  export let curentStep;
   export let stageCount;
   export let width;
   import { scaleLinear } from "d3";
@@ -12,15 +12,15 @@
 </script>
 
 <div class="step-counter">
-  {#if currentStep >= 0}
-    <p class="stage">Etape {currentStep + 1}</p>
+  {#if curentStep >= 0}
+    <p class="stage">Etape {curentStep + 1}</p>
     <svg {width}>
       {#each stageCount as stage, i}
         <circle
           cx={stageScale(i + 1)}
           cy="30"
           r="5"
-          fill={i <= currentStep ? "white" : "grey"}
+          fill={i <= curentStep ? "white" : "grey"}
         />{/each}
     </svg>
   {/if}
