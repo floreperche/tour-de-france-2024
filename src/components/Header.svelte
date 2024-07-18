@@ -13,10 +13,10 @@
       </div>
       <div><p class="subtitle">A scrolly visualisation</p></div>
     </div>
-    <div style="width: 100vw; height:100px;   ">
+    <div style="width: 100vw; height:100px; display:flex; align-items:end  ">
       <img
         style=" max-width: 100%;
-  height: auto; margin-top: 0px"
+  height: auto; max-height: 100%; margin: 0px auto"
         src="src\assets\visuals\header-landscape.svg"
         alt=""
       />
@@ -55,7 +55,7 @@
   .title-container {
     width: 100vw;
     height: 50vh;
-    background: linear-gradient(#cce0e3 90%, #615968);
+    background: linear-gradient(#cce0e3 92%, #615968 93%);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
