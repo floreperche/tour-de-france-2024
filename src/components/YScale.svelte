@@ -1,5 +1,5 @@
 <script>
-  export let curentStep;
+  export let currentStep;
   export let maxYScale;
   export let height;
   import { tweened } from "svelte/motion";
@@ -15,81 +15,48 @@
     easing: cubicInOut,
   });
 
-  let scaleWidth;
+  $: tYScale.set(maxYScale);
 
-  $: {
-    if (curentStep === undefined) {
-      tYScale.set(0);
-    } else {
-      tYScale.set(maxYScale);
-    }
-  }
-
-  $: console.log();
-
-  $: yTicks = [0, 60, 120, 240, 360];
-
-  $: {
-    if (maxYScale === 130) {
-      yTicks = [0, 60, 120, 240, 360, 480];
-    } else {
-      yTicks = [0, 120, 240, 360, 480];
-    }
-  }
-
-  $: console.log(scaleWidth);
+  $: yTicks = [0, 60, 120];
 </script>
 
-<div bind:clientWidth={scaleWidth} class="scale-container">
-  <svg width="25vw" height="100vh" class="scale">
-    {#if curentStep >= 0}
-      {#each yTicks as tick}
-        {#if tick === 0}
-          <text
-            dominant-baseline="middle"
-            text-anchor="end"
-            fill="white"
-            x={scaleWidth - 20}
-            y={yScale(tick) - 8}
-            >Leader
-          </text>
-          <text
-            dominant-baseline="middle"
-            text-anchor="end"
-            fill="white"
-            x={scaleWidth - 20}
-            y={yScale(tick) + 8}>time</text
-          >
-        {:else}
-          <text
-            text-anchor="end"
-            dominant-baseline="middle"
-            fill="white"
-            x={scaleWidth - 20}
-            y={yScale(tick)}
-            >+ {tick / 60}min
-          </text>
-        {/if}
-        <rect
-          x={scaleWidth - 7}
+<svg width="25vw" height="100vh" class="scale">
+  {#if currentStep >= 0}
+    {#each yTicks as tick}
+      {#if tick === 0}
+        <text
+          dominant-baseline="middle"
+          fill="white"
+          x="10"
           y={yScale(tick) - 8}
-          width="5"
-          height="20"
+          >temps du
+        </text>
+        <text
+          dominant-baseline="middle"
           fill="white"
-          opacity="0.5"
-        />
-        <rect
-          x={scaleWidth - 5}
-          y={yScale(tick) - 12}
-          width="5"
-          height="20"
+          x="10"
+          y={yScale(tick) + 8}>leader</text
+        >
+      {:else}
+        <text
+          dominant-baseline="middle"
           fill="white"
-          opacity="0.5"
-        />
-      {/each}
-    {/if}
-  </svg>
-</div>
+          x="10"
+          y={yScale(tick) - 8}
+          >{tick / 60} min
+        </text>
+        <text
+          dominant-baseline="middle"
+          fill="white"
+          x="10"
+          y={yScale(tick) + 8}>de retard</text
+        >{/if}
+    {/each}
+  {/if}
+</svg>
 
 <style>
+  .scale {
+    transition: background-color 800ms ease;
+  }
 </style>

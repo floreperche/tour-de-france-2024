@@ -20,20 +20,20 @@
 
   $: xScale = scaleLinear()
     .domain([0, 4])
-    .range([5, width / 2 - 15]);
+    .range([20, width / 2 - 20]);
 
   $: yScale = scaleLinear()
     .domain([0, maxYScale])
     .range([height - 100, 10]);
 
-  let curentStep;
+  let currentStep;
 
   $: {
-    if (curentStep === undefined) {
+    if (currentStep === undefined) {
       renderedData = riders;
     } else {
       initialStageData.map((e) => {
-        if (e.id === curentStep + 1) {
+        if (e.id === currentStep + 1) {
           displayedResults = e.riders;
         }
       });
@@ -44,15 +44,13 @@
           time: displayedResults[i].time,
         };
       });
-      if (curentStep > 11) {
-        maxYScale = 500;
+      if (currentStep > 11) {
+        maxYScale = 560;
       } else {
         maxYScale = 130;
       }
     }
   }
-
-  $: console.log(height);
 </script>
 
 <div class="container" style="position: relative">
@@ -62,11 +60,11 @@
   <section>
     <div class="chart-container">
       <div class="chart" bind:clientWidth={width} bind:clientHeight={height}>
-        <YScale {curentStep} {maxYScale} {height} />
+        <YScale {currentStep} {maxYScale} {height} />
         <svg width="50vw" height="100vh" class="viz">
           <line
-            x1={width / 2 - 10}
-            x2={width / 2 - 10}
+            x1={width / 2 - 14}
+            x2={width / 2 - 14}
             y1={0}
             y2={height}
             stroke="white"
@@ -74,21 +72,22 @@
             opacity="0.5"
           ></line>
           {#each renderedData as rider}
-            <Rider {rider} {xScale} {yScale} {curentStep} />
+            <Rider {rider} {xScale} {yScale} {currentStep} />
           {/each}
         </svg>
       </div>
+      <!-- <StepCount {currentStep} stageCount={initialStageData} {width} /> -->
     </div>
 
-    <Scrolly bind:value={curentStep}>
+    <Scrolly bind:value={currentStep}>
       {#each initialStageData as stage, i}
-        <div class="step step{i + 1}" class:active={curentStep === i}>
+        <div class="step step{i + 1}" class:active={currentStep === i}>
           {#if stage.type === "flat"}
             <Flat
               {width}
               {height}
               curentStage={stage.id}
-              {curentStep}
+              {currentStep}
               {initialStageData}
             />
           {:else if stage.type === "hilly"}
@@ -96,14 +95,14 @@
               {width}
               {height}
               curentStage={stage.id}
-              {curentStep}
+              {currentStep}
               {initialStageData}
             />{:else if stage.type === "mountain"}
             <Mountain
               {width}
               {height}
               curentStage={stage.id}
-              {curentStep}
+              {currentStep}
               {initialStageData}
             />{/if}
         </div>
@@ -130,11 +129,13 @@
   .chart-container {
     position: sticky;
     width: 100vw;
+    height: 100vh;
     top: 0%;
   }
 
   .chart {
     width: 100vw;
+    position: relative;
     display: flex;
   }
   .viz {
@@ -143,7 +144,7 @@
 
   /* Scrollytelling CSS */
   .step {
-    height: 125vh;
+    height: 150vh;
     width: 100vw;
     display: flex;
     place-items: center;
