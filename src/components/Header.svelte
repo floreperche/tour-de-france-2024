@@ -1,3 +1,7 @@
+<script>
+  import HeaderLandscape from "./HeaderLandscape.svelte";
+</script>
+
 <div class="header">
   <div class="title-container">
     <div class="title">
@@ -13,13 +17,8 @@
       </div>
       <div><p class="subtitle">A scrolly visualisation</p></div>
     </div>
-    <div style="width: 100vw; height:100px; display:flex; align-items:end  ">
-      <img
-        style=" max-width: 100%;
-  height: auto; max-height: 100%; margin: 0px auto"
-        src="src\assets\visuals\header-landscape.svg"
-        alt=""
-      />
+    <div style=" width: 100vw; height:150px;   ">
+      <HeaderLandscape />
     </div>
   </div>
   <div class="description">

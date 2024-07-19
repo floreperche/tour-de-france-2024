@@ -9,6 +9,8 @@
   import Hilly from "./components/Hilly.svelte";
   import Mountain from "./components/Mountain.svelte";
   import Rider from "./components/Rider.svelte";
+  import ItalianLandscape from "./components/ItalianLandscape.svelte";
+  import NiceLandscape from "./components/NiceLandscape.svelte";
 
   let width;
   let height;
@@ -54,7 +56,9 @@
 </script>
 
 <div class="container" style="position: relative">
-  <div class="initial-landscape"></div>
+  <div class="initial-landscape">
+    <ItalianLandscape {width} {height} {curentStep} />
+  </div>
   <Header />
 
   <section>
@@ -81,7 +85,9 @@
     <Scrolly bind:value={curentStep}>
       {#each initialStageData as stage, i}
         <div class="step step{i + 1}" class:active={curentStep === i}>
-          {#if stage.type === "flat"}
+          {#if stage.type === "final"}
+            <NiceLandscape {width} {height} {curentStep} />
+          {:else if stage.type === "flat"}
             <Flat
               {width}
               {height}
@@ -115,11 +121,10 @@
 <style>
   .initial-landscape {
     position: absolute;
-    width: 25vw;
+    width: 100vw;
     height: 101vh;
     top: 100vh;
     right: 0;
-    background: linear-gradient(#615968 85%, #609978);
   }
   .container {
     background-color: #615968;

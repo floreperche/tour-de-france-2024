@@ -3,7 +3,9 @@
     "id": 1,
     "name": "J. VINGEGAARD",
     "team": "TVL",
-    "color": "#22489B",
+    "jersey": "#1949B2",
+    "helmet": "#F1F1F1",
+    "short": "#162751",
     "rank": 0.5,
     "time": 100
   },
@@ -11,7 +13,9 @@
     "id": 8,
     "name": "W. VAN AERT",
     "team": "TVL",
-    "color": "#22489B",
+    "jersey": "#1949B2",
+    "helmet": "#AAA9AD",
+    "short": "#162751",
     "rank": 1.01,
     "time": 90
   },
@@ -19,7 +23,9 @@
     "id": 11,
     "name": "T. POGACAR",
     "team": "UAE",
-    "color": "white",
+    "jersey": "url(#uae)",
+    "helmet": "#D9D9D9",
+    "short": "#202020",
     "rank": 1.5,
     "time": 100
   },
@@ -27,7 +33,9 @@
     "id": 71,
     "name": "R. EVENEPOEL",
     "team": "SQS",
-    "color": "blue",
+    "jersey": "url(#sqs)",
+    "helmet": "#0362C8",
+    "short": "#2B385A",
     "rank": 2.5,
     "time": 100
   },
@@ -35,7 +43,9 @@
     "id": 111,
     "name": "R. CARAPAZ",
     "team": "EFE",
-    "color": "pink",
+    "jersey": "#F7939B",
+    "helmet": "#F7939B",
+    "short": "#404040",
     "rank": 3.5,
     "time": 100
   },
@@ -43,7 +53,9 @@
     "id": 181,
     "name": "R. BARDET",
     "team": "AAA",
-    "color": "orange",
+    "jersey": "#2480B0",
+    "helmet": "#F09E62",
+    "short": "#3A5E89",
     "rank": 2,
     "time": 90
   },
@@ -51,7 +63,9 @@
     "id": 187,
     "name": "F. VAN DEN BROEK",
     "team": "AAA",
-    "color": "orange",
+    "jersey": "#2480B0",
+    "helmet": "#F09E62",
+    "short": "#3A5E89",
     "rank": 3,
     "time": 90
   }
