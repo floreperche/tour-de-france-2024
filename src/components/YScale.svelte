@@ -2,13 +2,14 @@
   export let curentStep;
   export let maxYScale;
   export let height;
+  export let heightMargin;
   import { tweened } from "svelte/motion";
   import { cubicInOut } from "svelte/easing";
   import { scaleLinear } from "d3";
 
   $: yScale = scaleLinear()
     .domain([0, $tYScale])
-    .range([height - 100, 10]);
+    .range([height - heightMargin, 10]);
 
   const tYScale = tweened(undefined, {
     duration: 2000,

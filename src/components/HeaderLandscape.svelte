@@ -2588,4 +2588,10 @@
   g {
     transform: scale(0.5) translate(-50px, 0);
   }
+
+  @media (max-height: 576px) {
+    /* g {
+      transform: scale(0.43) translate(-50px, 0);
+    } */
+  }
 </style>

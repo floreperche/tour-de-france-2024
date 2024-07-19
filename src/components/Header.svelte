@@ -5,8 +5,11 @@
 <div class="header">
   <div class="title-container">
     <div class="title">
-      <div><p>LE TOUR DE</p></div>
-      <div><p>FRANCE '24</p></div>
+      <div class="headline">
+        <div><p>LE TOUR DE</p></div>
+        <div><p>FRANCE '24</p></div>
+      </div>
+
       <div>
         <svg width="203" height="6"
           ><path
@@ -115,5 +118,49 @@
     font-family: "Caveat Brush", cursive;
     font-size: 20px;
     color: white;
+  }
+
+  @media (max-height: 576px) {
+    .header .title .headline {
+      display: flex;
+    }
+
+    .header .title p {
+      font-size: 36px;
+    }
+
+    .description {
+      flex-direction: row;
+      align-items: center;
+      font-size: 18px;
+      padding: 1em;
+    }
+
+    .description > p {
+      max-width: 60%;
+    }
+
+    .scroll-indicator {
+      max-width: 40%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .scroll-indicator p {
+      font-size: 16px;
+      width: 100%;
+      padding-top: 10px;
+    }
+    .scroll-indicator svg {
+      width: 20;
+      height: 20;
+    }
+  }
+  @media (max-height: 400px) {
+    .description {
+      font-size: 14px;
+      height: 20vh;
+    }
   }
 </style>

@@ -24,9 +24,11 @@
     .domain([0, 4])
     .range([5, width / 2 - 15]);
 
+  $: heightMargin = height && height < 576 ? 40 : 100;
+
   $: yScale = scaleLinear()
     .domain([0, maxYScale])
-    .range([height - 100, 10]);
+    .range([height - heightMargin, 10]);
 
   let curentStep;
 
@@ -65,7 +67,7 @@
     <section>
       <div class="chart-container">
         <div class="chart" bind:clientWidth={width} bind:clientHeight={height}>
-          <YScale {curentStep} {maxYScale} {height} />
+          <YScale {curentStep} {maxYScale} {height} {heightMargin} />
           <svg width={width * 0.75} {height} class="viz">
             <line
               x1={width / 2 - 10}
