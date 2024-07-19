@@ -153,7 +153,7 @@
   }
 
   .step-count {
-    width: 50vh;
+    width: 50%;
   }
 
   .step-count svg {

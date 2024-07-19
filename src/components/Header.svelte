@@ -17,7 +17,7 @@
       </div>
       <div><p class="subtitle">A scrolly visualisation</p></div>
     </div>
-    <div style=" width: 100vw; height:150px;   ">
+    <div style=" width: 100%; height:150px;   ">
       <HeaderLandscape />
     </div>
   </div>
@@ -44,7 +44,7 @@
 <style>
   .header {
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     background-color: #615968;
     display: flex;
     flex-direction: column;
@@ -52,7 +52,7 @@
   }
 
   .title-container {
-    width: 100vw;
+    width: 100%;
     height: 50vh;
     background: linear-gradient(#cce0e3 92%, #615968 93%);
     display: flex;

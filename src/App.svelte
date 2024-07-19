@@ -55,89 +55,96 @@
   }
 </script>
 
-<div class="container" style="position: relative">
-  <div class="initial-landscape">
-    <ItalianLandscape {width} {height} {curentStep} />
-  </div>
-  <Header />
-
-  <section>
-    <div class="chart-container">
-      <div class="chart" bind:clientWidth={width} bind:clientHeight={height}>
-        <YScale {curentStep} {maxYScale} {height} />
-        <svg width="50vw" height="100vh" class="viz">
-          <line
-            x1={width / 2 - 10}
-            x2={width / 2 - 10}
-            y1={0}
-            y2={height}
-            stroke="white"
-            stroke-width="3"
-            opacity="0.5"
-          ></line>
-          {#each renderedData as rider}
-            <Rider {rider} {xScale} {yScale} {curentStep} />
-          {/each}
-        </svg>
-      </div>
+<div class="background">
+  <div class="container" style="position: relative">
+    <div class="initial-landscape" style="height: {height}px">
+      <ItalianLandscape {width} {height} {curentStep} />
     </div>
+    <Header />
 
-    <Scrolly bind:value={curentStep}>
-      {#each initialStageData as stage, i}
-        <div class="step step{i + 1}" class:active={curentStep === i}>
-          {#if stage.type === "final"}
-            <NiceLandscape {width} {height} {curentStep} />
-          {:else if stage.type === "flat"}
-            <Flat
-              {width}
-              {height}
-              curentStage={stage.id}
-              {curentStep}
-              {initialStageData}
-            />
-          {:else if stage.type === "hilly"}
-            <Hilly
-              {width}
-              {height}
-              curentStage={stage.id}
-              {curentStep}
-              {initialStageData}
-            />{:else if stage.type === "mountain"}
-            <Mountain
-              {width}
-              {height}
-              curentStage={stage.id}
-              {curentStep}
-              {initialStageData}
-            />{/if}
+    <section>
+      <div class="chart-container">
+        <div class="chart" bind:clientWidth={width} bind:clientHeight={height}>
+          <YScale {curentStep} {maxYScale} {height} />
+          <svg width={width * 0.75} {height} class="viz">
+            <line
+              x1={width / 2 - 10}
+              x2={width / 2 - 10}
+              y1={0}
+              y2={height}
+              stroke="white"
+              stroke-width="3"
+              opacity="0.5"
+            ></line>
+            {#each renderedData as rider}
+              <Rider {rider} {xScale} {yScale} {curentStep} />
+            {/each}
+          </svg>
         </div>
-      {/each}
-    </Scrolly>
-  </section>
+      </div>
 
-  <!-- <div>END</div> -->
+      <Scrolly bind:value={curentStep}>
+        {#each initialStageData as stage, i}
+          <div class="step step{i + 1}" class:active={curentStep === i}>
+            {#if stage.type === "final"}
+              <NiceLandscape {width} {height} {curentStep} />
+            {:else if stage.type === "flat"}
+              <Flat
+                {width}
+                {height}
+                curentStage={stage.id}
+                {curentStep}
+                {initialStageData}
+              />
+            {:else if stage.type === "hilly"}
+              <Hilly
+                {width}
+                {height}
+                curentStage={stage.id}
+                {curentStep}
+                {initialStageData}
+              />{:else if stage.type === "mountain"}
+              <Mountain
+                {width}
+                {height}
+                curentStage={stage.id}
+                {curentStep}
+                {initialStageData}
+              />{/if}
+          </div>
+        {/each}
+      </Scrolly>
+    </section>
+
+    <!-- <div>END</div> -->
+  </div>
 </div>
 
 <style>
-  .initial-landscape {
-    position: absolute;
-    width: 100vw;
-    height: 101vh;
-    top: 100vh;
-    right: 0;
+  .background {
+    background-color: #403b44;
   }
   .container {
     background-color: #615968;
+    max-width: 700px;
+    box-shadow: 0px 10px 20px rgb(30, 29, 32);
+    margin: 0 auto;
+  }
+  .initial-landscape {
+    position: absolute;
+    width: 100%;
+    top: 100vh;
+    right: 0;
   }
 
   .chart-container {
     position: sticky;
-    width: 100vw;
+    width: 100%;
     top: 0%;
   }
 
   .chart {
-    width: 100vw;
+    width: 100%;
     display: flex;
   }
   .viz {
@@ -147,7 +154,7 @@
   /* Scrollytelling CSS */
   .step {
     height: 125vh;
-    width: 100vw;
+    width: 100%;
     display: flex;
     place-items: center;
     justify-content: end;

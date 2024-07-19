@@ -37,7 +37,7 @@
 </script>
 
 <div bind:clientWidth={scaleWidth} class="scale-container">
-  <svg width="25vw" height="100vh" class="scale">
+  <svg width={scaleWidth} height="100vh" class="scale">
     {#if curentStep >= 0}
       {#each yTicks as tick}
         {#if tick === 0}
@@ -86,3 +86,9 @@
     {/if}
   </svg>
 </div>
+
+<style>
+  .scale-container {
+    width: 25%;
+  }
+</style>

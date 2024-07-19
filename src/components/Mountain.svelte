@@ -344,10 +344,6 @@
     justify-content: end;
   }
 
-  .step-count {
-    width: 50vh;
-  }
-
   .step-count svg {
     width: 100%;
     max-width: 50vw;
