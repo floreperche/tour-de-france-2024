@@ -14,11 +14,10 @@
 
   let width;
   let height;
-
-  let renderedData = riders;
+  let renderedData;
   let displayedResults;
-
   let maxYScale = 130;
+  let curentStep;
 
   $: xScale = scaleLinear()
     .domain([0, 4])
@@ -29,8 +28,6 @@
   $: yScale = scaleLinear()
     .domain([0, maxYScale])
     .range([height - heightMargin, 10]);
-
-  let curentStep;
 
   $: {
     if (curentStep === undefined) {
@@ -44,6 +41,7 @@
       renderedData = riders.map((obj, i) => {
         return {
           ...obj,
+          stage: curentStep + 1,
           rank: displayedResults[i].rank,
           time: displayedResults[i].time,
         };
@@ -58,7 +56,7 @@
 </script>
 
 <div class="background">
-  <div class="container" style="position: relative">
+  <div class="container" style="position: relative;">
     <div class="initial-landscape" style="height: {height}px">
       <ItalianLandscape {width} {height} {curentStep} />
     </div>
@@ -78,8 +76,10 @@
               stroke-width="3"
               opacity="0.5"
             ></line>
+
             {#each renderedData as rider}
-              <Rider {rider} {xScale} {yScale} {curentStep} />
+              {#if !isNaN(xScale(rider.rank)) && !isNaN(yScale(rider.time))}
+                <Rider {rider} {xScale} {yScale} {curentStep} />{/if}
             {/each}
           </svg>
         </div>

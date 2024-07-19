@@ -93,64 +93,65 @@
             <stop offset="50%" stop-color="#648D13" />
           </linearGradient>
         </defs>
-        {#if hillData}
-          {#each hillData as hill}<g
-              transform="translate({xHillScale(hill.x)},{yHillScale(hill.y)})"
-            >
-              <!-- Hills with 3 sizes -->
-              {#if hill.type === 1}{#if hill.size === 1}
-                  <path
-                    d="M158.19 48.1793L0 48.1793C4.4172e-05 21.675 35.4122 0.188965 79.0952 0.188965C122.778 0.188965 158.19 21.675 158.19 48.1793Z"
-                    fill={hill.color === 1
-                      ? "url(#dark-hill)"
-                      : hill.color === 2
-                        ? "url(#medium-hill)"
-                        : "url(#light-hill)"}
-                  />
-                {:else if hill.size === 2}
-                  <path
-                    d="M193.049 81.1793C193.049 36.5636 149.913 0.395508 96.7014 0.395508C43.4901 0.395508 0.35376 36.5636 0.35376 81.1793H193.049Z"
-                    fill={hill.color === 1
-                      ? "url(#dark-hill)"
-                      : hill.color === 2
-                        ? "url(#medium-hill)"
-                        : "url(#light-hill)"}
-                  />
-                {:else if hill.size === 3}
-                  <path
-                    d="M0.304688 103.179H193C193 46.1949 149.864 0 96.6523 0C43.441 0 0.304688 46.1949 0.304688 103.179Z"
-                    fill={hill.color === 1
-                      ? "url(#dark-hill)"
-                      : hill.color === 2
-                        ? "url(#medium-hill)"
-                        : "url(#light-hill)"}
-                  />
-                {/if}
+        {#if !isNaN(xHillScale(1)) && !isNaN(yHillScale(1))}
+          {#if hillData}
+            {#each hillData as hill}<g
+                transform="translate({xHillScale(hill.x)},{yHillScale(hill.y)})"
+              >
+                <!-- Hills with 3 sizes -->
+                {#if hill.type === 1}{#if hill.size === 1}
+                    <path
+                      d="M158.19 48.1793L0 48.1793C4.4172e-05 21.675 35.4122 0.188965 79.0952 0.188965C122.778 0.188965 158.19 21.675 158.19 48.1793Z"
+                      fill={hill.color === 1
+                        ? "url(#dark-hill)"
+                        : hill.color === 2
+                          ? "url(#medium-hill)"
+                          : "url(#light-hill)"}
+                    />
+                  {:else if hill.size === 2}
+                    <path
+                      d="M193.049 81.1793C193.049 36.5636 149.913 0.395508 96.7014 0.395508C43.4901 0.395508 0.35376 36.5636 0.35376 81.1793H193.049Z"
+                      fill={hill.color === 1
+                        ? "url(#dark-hill)"
+                        : hill.color === 2
+                          ? "url(#medium-hill)"
+                          : "url(#light-hill)"}
+                    />
+                  {:else if hill.size === 3}
+                    <path
+                      d="M0.304688 103.179H193C193 46.1949 149.864 0 96.6523 0C43.441 0 0.304688 46.1949 0.304688 103.179Z"
+                      fill={hill.color === 1
+                        ? "url(#dark-hill)"
+                        : hill.color === 2
+                          ? "url(#medium-hill)"
+                          : "url(#light-hill)"}
+                    />
+                  {/if}
 
-                <!-- Bushes with two sizes -->
-              {:else if hill.type === 2}
-                {#if hill.size === 1}
-                  <path
-                    d="M49.9704 24.1368H6.00458C-5.39267 18.9399 1.24566 8.19958 10.912 12.3571C10.912 12.3571 9.20059 1.03939 18.0518 0C21.6622 0 29.2323 0 27.3333 11.3178C30.345 4.96595 33.771 5.13221 38.3975 7.04472C41.0226 8.12992 44.4536 12.3571 41.3091 17.3231C49.9704 11.3178 54.2365 21.0187 49.9704 24.1368Z"
-                    fill={hill.color === 1
-                      ? "url(#dark-hill)"
-                      : hill.color === 2
-                        ? "url(#medium-hill)"
-                        : "url(#light-hill)"}
-                  />
-                {:else}
-                  <path
-                    d="M52.6408 22.1366H1.0374C-3.29954 9.57387 11.0941 4.2254 17.1281 9.51171C17.1281 9.51171 16.871 0.245158 31.2075 0.245117C34.5388 0.245108 43.5898 2.91937 38.5614 13.492C50.9437 5.53143 54.1912 17.493 52.6408 22.1366Z"
-                    fill={hill.color === 1
-                      ? "url(#dark-hill)"
-                      : hill.color === 2
-                        ? "url(#medium-hill)"
-                        : "url(#light-hill)"}
-                  />
+                  <!-- Bushes with two sizes -->
+                {:else if hill.type === 2}
+                  {#if hill.size === 1}
+                    <path
+                      d="M49.9704 24.1368H6.00458C-5.39267 18.9399 1.24566 8.19958 10.912 12.3571C10.912 12.3571 9.20059 1.03939 18.0518 0C21.6622 0 29.2323 0 27.3333 11.3178C30.345 4.96595 33.771 5.13221 38.3975 7.04472C41.0226 8.12992 44.4536 12.3571 41.3091 17.3231C49.9704 11.3178 54.2365 21.0187 49.9704 24.1368Z"
+                      fill={hill.color === 1
+                        ? "url(#dark-hill)"
+                        : hill.color === 2
+                          ? "url(#medium-hill)"
+                          : "url(#light-hill)"}
+                    />
+                  {:else}
+                    <path
+                      d="M52.6408 22.1366H1.0374C-3.29954 9.57387 11.0941 4.2254 17.1281 9.51171C17.1281 9.51171 16.871 0.245158 31.2075 0.245117C34.5388 0.245108 43.5898 2.91937 38.5614 13.492C50.9437 5.53143 54.1912 17.493 52.6408 22.1366Z"
+                      fill={hill.color === 1
+                        ? "url(#dark-hill)"
+                        : hill.color === 2
+                          ? "url(#medium-hill)"
+                          : "url(#light-hill)"}
+                    />
+                  {/if}
                 {/if}
-              {/if}
-            </g>{/each}
-        {/if}
+              </g>{/each}
+          {/if}{/if}
       </svg>
     {/if}
   </div>

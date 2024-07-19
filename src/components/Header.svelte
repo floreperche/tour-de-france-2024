@@ -26,8 +26,9 @@
   </div>
   <div class="description">
     <p>
-      Relive the battle for the Yellow jersey and how the gap evolved between
-      the three best classified riders throught the stages.
+      (Re)discover how xxxx xxxx won its xx Tour de France, overtaking his
+      historical rival xxx xxxx and lorem ipsum dolor sit amet, consectetur
+      adipiscing elit. Fusce pretium interdum nisl vitae ultrices.
     </p>
 
     <div class="scroll-indicator">
@@ -95,14 +96,20 @@
     height: 40vh;
     padding: 2em;
     color: white;
-    font-size: 18px;
-    font-weight: 300;
+    font-size: 16px;
+    font-weight: 200;
     letter-spacing: 0.5px;
     line-height: 1.4;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     gap: 20px;
+  }
+
+  .description > p {
+    text-align: justify;
+    text-justify: inter-word;
+    font-weight: 300;
   }
 
   .scroll-indicator {
@@ -138,6 +145,7 @@
 
     .description > p {
       max-width: 60%;
+      font-size: 14px;
     }
 
     .scroll-indicator {
@@ -159,8 +167,11 @@
   }
   @media (max-height: 400px) {
     .description {
-      font-size: 14px;
       height: 20vh;
+    }
+
+    .description > p {
+      font-size: 12px;
     }
   }
 </style>

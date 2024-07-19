@@ -6,8 +6,9 @@
     "jersey": "#1949B2",
     "helmet": "#F1F1F1",
     "short": "#162751",
+    "stage": 0,
     "rank": 0.5,
-    "time": 100
+    "time": 30
   },
   {
     "id": 8,
@@ -16,8 +17,9 @@
     "jersey": "#1949B2",
     "helmet": "#AAA9AD",
     "short": "#162751",
+    "stage": 0,
     "rank": 1.01,
-    "time": 90
+    "time": 20
   },
   {
     "id": 11,
@@ -26,8 +28,9 @@
     "jersey": "url(#uae)",
     "helmet": "#D9D9D9",
     "short": "#202020",
+    "stage": 0,
     "rank": 1.5,
-    "time": 100
+    "time": 30
   },
   {
     "id": 71,
@@ -36,8 +39,9 @@
     "jersey": "url(#sqs)",
     "helmet": "#0362C8",
     "short": "#2B385A",
+    "stage": 0,
     "rank": 2.5,
-    "time": 100
+    "time": 30
   },
   {
     "id": 111,
@@ -46,8 +50,9 @@
     "jersey": "#F7939B",
     "helmet": "#F7939B",
     "short": "#404040",
+    "stage": 0,
     "rank": 3.5,
-    "time": 100
+    "time": 30
   },
   {
     "id": 181,
@@ -56,8 +61,9 @@
     "jersey": "#2480B0",
     "helmet": "#F09E62",
     "short": "#3A5E89",
+    "stage": 0,
     "rank": 2,
-    "time": 90
+    "time": 20
   },
   {
     "id": 187,
@@ -66,7 +72,8 @@
     "jersey": "#2480B0",
     "helmet": "#F09E62",
     "short": "#3A5E89",
+    "stage": 0,
     "rank": 3,
-    "time": 90
+    "time": 20
   }
 ]
