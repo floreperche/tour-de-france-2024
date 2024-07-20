@@ -4,6 +4,7 @@
 
 <div class="header">
   <div class="title-container">
+    <div></div>
     <div class="title">
       <div class="headline">
         <div><p>LE TOUR DE</p></div>
@@ -94,7 +95,7 @@
 
   .description {
     height: 40vh;
-    padding: 2em;
+    padding: 0em 3em;
     color: white;
     font-size: 16px;
     font-weight: 200;
@@ -172,6 +173,24 @@
 
     .description > p {
       font-size: 12px;
+    }
+  }
+
+  @media (min-height: 800px) {
+    .header .title p {
+      font-size: 70px;
+    }
+
+    .header .title .subtitle {
+      font-size: 20px;
+    }
+
+    .description {
+      padding: 4em;
+    }
+
+    .description > p {
+      font-size: 18px;
     }
   }
 </style>

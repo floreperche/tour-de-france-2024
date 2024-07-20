@@ -17,38 +17,24 @@
 <div class="step-content">
   <div class="step-count">
     <svg>
-      <line
-        x1={width / 4 - 60}
-        x2={width / 4 + 60}
-        y1={50}
-        y2={50}
-        stroke="white"
-        stroke-width="4"
-        opacity="0.5"
-      ></line>
-      <text
-        x={width / 4}
-        y={100}
-        fill="white"
-        text-anchor="middle"
-        font-size="38"
-        opacity="0.5">STAGE 21</text
-      >
-      <text
-        x={width / 4}
-        y={height * 1.15}
-        fill="white"
-        text-anchor="middle"
-        font-size="38"
-        opacity="0.5">XXXXXXX</text
-      >
-      <text
-        x={width / 4}
-        y={height * 1.22}
-        fill="white"
-        text-anchor="middle"
-        font-size="38"
-        opacity="0.5">WINS!</text
+      <g transform="translate({width / 4}, 0) scale({width / 320})"
+        ><line
+          x1="0"
+          x2="0"
+          y1={50}
+          y2={50}
+          stroke="white"
+          stroke-width="4"
+          opacity="0.5"
+        ></line>
+        <text
+          x="0"
+          y={100}
+          fill="white"
+          text-anchor="middle"
+          font-size="38"
+          opacity="0.5">STAGE 21</text
+        ></g
       >
     </svg>
   </div>

@@ -126,6 +126,39 @@
       </Scrolly>
     </section>
 
+    <div class="result">
+      <svg {width} height={width * 0.3}>
+        <line
+          x1={width * (3 / 4) - 10}
+          x2={width * (3 / 4) - 10}
+          y1={0}
+          y2="100%"
+          stroke="white"
+          stroke-width="3"
+          opacity="0.5"
+        ></line>
+        <g transform="translate({width / 2},  0) scale({width / 320})">
+          <text
+            x="0"
+            y="40"
+            fill="white"
+            text-anchor="middle"
+            dominant-baseline="end"
+            font-size="38"
+            opacity="0.5">XXXXXXX</text
+          >
+          <text
+            x="0"
+            y="80"
+            fill="white"
+            text-anchor="middle"
+            font-size="38"
+            opacity="0.5">WINS!</text
+          >
+        </g>
+      </svg>
+    </div>
+
     <div class="footer">
       <div>
         <p>A project designed and developed by</p>
@@ -192,6 +225,9 @@
     margin-right: 0;
   }
 
+  .result {
+    font-family: "Caveat Brush", cursive;
+  }
   .footer {
     color: white;
     background-color: #504c53;
