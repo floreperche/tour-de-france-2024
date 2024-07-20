@@ -6,6 +6,7 @@
   export let initialStageData;
   import { scaleLinear } from "d3";
 
+  // Scales
   $: xMountainScale = scaleLinear()
     .domain([0, 1])
     .range([-100, width / 4]);
@@ -14,6 +15,7 @@
     .domain([0, 1])
     .range([height * 1.2, 0]);
 
+  // Background with transitions
   let background = "#478692";
   $: initialStageData.map((e) => {
     if (e.id === curentStage + 1) {
@@ -29,8 +31,9 @@
 </script>
 
 <div class="step-content">
+  <!-- Stage number on the road -->
   <div class="step-count">
-    <svg style="height:100%">
+    <svg>
       <g transform="translate({width / 4}, 0) scale({width / 320})">
         <line
           x1="-60"
@@ -52,6 +55,8 @@
       >
     </svg>
   </div>
+
+  <!-- Landscape -->
   <div class="landscape" style="background: {background}">
     {#if curentStage === curentStep + 1 || curentStage === curentStep || curentStage === curentStep + 2}
       <svg>
@@ -473,6 +478,7 @@
   }
 
   .step-count svg {
+    height: 100%;
     width: 100%;
     max-width: 50vw;
   }

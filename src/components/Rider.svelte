@@ -7,6 +7,7 @@
   import { tweened } from "svelte/motion";
   import { cubicInOut } from "svelte/easing";
 
+  // Managing dynamic scales
   const tX = tweened(undefined, {
     delay: 0,
     duration: 1000,
@@ -108,6 +109,7 @@
     fill="#D6D6D6"
   />
 </g>
+<!-- Displaying rider's name -->
 {#if curentStep >= 0 && rider.rank <= 3}
   <text
     dominant-baseline="middle"
@@ -118,7 +120,7 @@
     opacity="0.7"
   >
     {rider.name}</text
-  >=
+  >
 {/if}
 
 <style>

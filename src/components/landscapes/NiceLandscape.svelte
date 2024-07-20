@@ -15,6 +15,7 @@
 </script>
 
 <div class="step-content">
+  <!-- Stage number on the road -->
   <div class="step-count">
     <svg>
       <g transform="translate({width / 4}, 0) scale({width / 320})"
@@ -55,6 +56,7 @@
           )}) scale({height < 1200
             ? (height / 720) * 0.65
             : (height / 720) * 0.5})"
+          class="shadow"
           ><path
             d="M166.689 36.0646C175.958 33.5778 193.677 112.555 238.656 170.651H0C34.5725 136.254 50.2713 76.1683 62.2659 68.6968C74.2604 61.2254 86.7841 133.14 102.836 136.254C126.472 140.841 144.993 41.8857 166.689 36.0646Z"
             fill="url(#double)"
@@ -115,6 +117,7 @@
           )}) scale({height < 1200
             ? (height / 720) * 0.65
             : (height / 720) * 0.5})"
+          class="shadow"
           ><path
             d="M337.129 116.314H208.139C242.003 74.9122 254.376 2.71899 270.787 2.71899C287.197 2.71899 311.731 81.5697 337.129 116.314Z"
             fill="url(#mediummountain)"
@@ -248,8 +251,8 @@
     height: 100%;
   }
 
-  /* path {
-        -webkit-filter: drop-shadow(3px -3px 4px rgba(0, 0, 0, 0.2));
-        filter: drop-shadow(3px -3px 4px rgba(0, 0, 0, 0.2));
-      } */
+  .shadow {
+    -webkit-filter: drop-shadow(3px -3px 4px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(3px -3px 4px rgba(0, 0, 0, 0.2));
+  }
 </style>

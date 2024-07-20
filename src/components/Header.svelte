@@ -3,6 +3,7 @@
 </script>
 
 <div class="header">
+  <!-- Title -->
   <div class="title-container">
     <div></div>
     <div class="title">
@@ -21,10 +22,12 @@
       </div>
       <div><p class="subtitle">A scrolly visualisation</p></div>
     </div>
-    <div style=" width: 100%; height:150px;   ">
+    <div class="header-landscape">
       <HeaderLandscape />
     </div>
   </div>
+
+  <!-- Description -->
   <div class="description">
     <p>
       (Re)discover how xxxx xxxx won its xx Tour de France, overtaking his
@@ -33,7 +36,7 @@
     </p>
 
     <div class="scroll-indicator">
-      <p>SCROLL TO START THE RACE</p>
+      <p>SCROLL <span>TO START THE RACE</span></p>
       <div>
         <svg width="27" height="29" viewBox="0 0 27 29"
           ><path
@@ -93,6 +96,11 @@
     padding-top: 8px;
   }
 
+  .header-landscape {
+    width: 100%;
+    height: 150px;
+  }
+
   .description {
     height: 40vh;
     padding: 0em 3em;
@@ -122,7 +130,8 @@
     gap: 10px;
   }
 
-  .scroll-indicator p {
+  .scroll-indicator p,
+  .scroll-indicator span {
     font-family: "Caveat Brush", cursive;
     font-size: 20px;
     color: white;
@@ -156,7 +165,8 @@
       align-items: center;
     }
 
-    .scroll-indicator p {
+    .scroll-indicator p,
+    .scroll-indicator span {
       font-size: 16px;
       width: 100%;
       padding-top: 10px;
@@ -173,6 +183,19 @@
 
     .description > p {
       font-size: 12px;
+      max-width: 80%;
+    }
+    .scroll-indicator {
+      max-width: 20%;
+      flex-direction: row;
+    }
+
+    .scroll-indicator p {
+      padding-top: 0px;
+    }
+
+    .scroll-indicator span {
+      display: none;
     }
   }
 

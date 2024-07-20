@@ -6,6 +6,7 @@
   import Florence from "./Florence.svelte";
   import ItalianField from "./ItalianField.svelte";
 
+  // Scales
   $: xItalianScale = scaleLinear()
     .domain([0, 1])
     .range([-100, width / 4]);
@@ -16,62 +17,63 @@
 </script>
 
 <div class="step-content">
+  <!-- Stage number on the road -->
   <div class="step-count">
     <svg>
-      <svg style="height:100%">
-        <g
-          transform="translate({width / 4}, 0) scale({height > 500
-            ? (width / 320) * 0.8
-            : (width / 320) * 0.6})"
+      <g
+        transform="translate({width / 4}, 0) scale({height > 500
+          ? (width / 320) * 0.8
+          : (width / 320) * 0.6})"
+      >
+        <text
+          x="0"
+          y="50"
+          fill="white"
+          text-anchor="middle"
+          font-size="38"
+          opacity="0.5">TDF 2024</text
         >
-          <text
-            x="0"
-            y="50"
-            fill="white"
-            text-anchor="middle"
-            font-size="38"
-            opacity="0.5">TDF 2024</text
-          >
 
-          <text
-            x="0"
-            y="100"
-            fill="white"
-            text-anchor="middle"
-            font-size="38"
-            opacity="0.5">STARTS IN</text
-          >
-          <text
-            x="0"
-            y="150"
-            fill="white"
-            text-anchor="middle"
-            font-size="38"
-            opacity="0.5">3</text
-          >
-          <text
-            x="0"
-            y="200"
-            fill="white"
-            text-anchor="middle"
-            font-size="38"
-            opacity="0.5">2</text
-          >
-          <text
-            x="0"
-            y="250"
-            fill="white"
-            text-anchor="middle"
-            font-size="38"
-            opacity="0.5">1</text
-          >
-        </g>
-      </svg>
+        <text
+          x="0"
+          y="100"
+          fill="white"
+          text-anchor="middle"
+          font-size="38"
+          opacity="0.5">STARTS IN</text
+        >
+        <text
+          x="0"
+          y="150"
+          fill="white"
+          text-anchor="middle"
+          font-size="38"
+          opacity="0.5">3</text
+        >
+        <text
+          x="0"
+          y="200"
+          fill="white"
+          text-anchor="middle"
+          font-size="38"
+          opacity="0.5">2</text
+        >
+        <text
+          x="0"
+          y="250"
+          fill="white"
+          text-anchor="middle"
+          font-size="38"
+          opacity="0.5">1</text
+        >
+      </g>
     </svg>
   </div>
+  <!-- Landscape -->
   <div class="landscape">
     {#if curentStep === undefined || curentStep === 0}
       <svg>
+        <!-- Gradients -->
         <defs>
           <linearGradient id="mountain" x1="0%" x2="100%" y1="0%" y2="100%">
             <stop offset="0%" stop-color="#8DB69E " />
@@ -215,6 +217,10 @@
     width: 50%;
     height: 100%;
     font-family: "Caveat Brush", cursive;
+  }
+
+  .step-count svg {
+    height: 100%;
   }
 
   .landscape svg {

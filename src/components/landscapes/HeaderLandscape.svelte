@@ -1,6 +1,3 @@
-<script>
-</script>
-
 <svg width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="double" x1="0%" x2="100%" y1="40%" y2="60%">
@@ -2608,11 +2605,5 @@
   .shadow {
     -webkit-filter: drop-shadow(3px -3px 4px rgba(0, 0, 0, 0.2));
     filter: drop-shadow(3px -3px 4px rgba(0, 0, 0, 0.2));
-  }
-
-  @media (max-height: 576px) {
-    /* g {
-      transform: scale(0.43) translate(-50px, 0);
-    } */
   }
 </style>

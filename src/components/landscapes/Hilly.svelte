@@ -6,6 +6,7 @@
   export let initialStageData;
   import { scaleLinear } from "d3";
 
+  // Data
   $: hillData = [
     { x: 0, y: 0.98, color: 1, type: 1, size: 1 },
     { x: 0.4, y: 0.96, color: 3, type: 2, size: 1 },
@@ -31,6 +32,7 @@
     { x: 0.6, y: 0.0, color: 2, type: 2, size: 2 },
   ];
 
+  // Scales
   $: xHillScale = scaleLinear()
     .domain([0, 1])
     .range([-100, width / 4]);
@@ -39,6 +41,7 @@
     .domain([0, 1])
     .range([height * 1.2, 0]);
 
+  // Background with transitions
   let background = "#609978";
   $: initialStageData.map((e) => {
     if (e.id === curentStage + 1) {
@@ -54,8 +57,9 @@
 </script>
 
 <div class="step-content">
+  <!-- Stage number on the road -->
   <div class="step-count">
-    <svg style="height:100%">
+    <svg>
       <g transform="translate({width / 4}, 0) scale({width / 320})">
         <line
           x1="-60"
@@ -78,9 +82,11 @@
     </svg>
   </div>
 
+  <!-- Landscape -->
   <div class="landscape" style="background: {background}">
     {#if curentStage === curentStep + 1 || curentStage === curentStep || curentStage === curentStep + 2}
       <svg>
+        <!-- Gradiants -->
         <defs>
           <linearGradient id="dark-hill" x1="0%" x2="100%" y1="0%" y2="100%">
             <stop offset="0%" stop-color="#437D35 " />
@@ -175,6 +181,7 @@
   }
 
   .step-count svg {
+    height: 100%;
     width: 100%;
     max-width: 50vw;
   }

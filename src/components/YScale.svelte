@@ -7,6 +7,7 @@
   import { cubicInOut } from "svelte/easing";
   import { scaleLinear } from "d3";
 
+  // Scales
   $: yScale = scaleLinear()
     .domain([0, $tYScale])
     .range([height - heightMargin, 10]);
@@ -18,6 +19,7 @@
 
   let scaleWidth;
 
+  // Manage dynamic scale
   $: {
     if (curentStep === undefined) {
       tYScale.set(0);

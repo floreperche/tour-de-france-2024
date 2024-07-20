@@ -11,7 +11,7 @@
   import Rider from "./components/Rider.svelte";
   import ItalianLandscape from "./components/landscapes/ItalianLandscape.svelte";
   import NiceLandscape from "./components/landscapes/NiceLandscape.svelte";
-  import logo from "./assets/visuals/logo_wv_png.png";
+  import Footer from "./components/Footer.svelte";
 
   let width;
   let height;
@@ -20,6 +20,7 @@
   let maxYScale = 130;
   let curentStep;
 
+  // Scales
   $: xScale = scaleLinear()
     .domain([0, 4])
     .range([5, width / 2 - 15]);
@@ -30,6 +31,7 @@
     .domain([0, maxYScale])
     .range([height - heightMargin, 10]);
 
+  // Data
   $: {
     if (curentStep === undefined) {
       renderedData = riders;
@@ -59,16 +61,19 @@
 <div class="background">
   <div
     class="container"
-    style="position: relative; background-color:{curentStep + 1 === 9
-      ? '#F2F2E3'
-      : '#615968'}"
+    style="background-color:{curentStep + 1 === 9 ? '#F2F2E3' : '#615968'}"
   >
+    <!-- Managing initial landscape -->
     <div class="initial-landscape" style="height: {height}px">
       <ItalianLandscape {width} {height} {curentStep} />
     </div>
+
+    <!-- Header -->
     <Header />
 
+    <!-- Core visualisation -->
     <section>
+      <!-- Chart -->
       <div class="chart-container">
         <div class="chart" bind:clientWidth={width} bind:clientHeight={height}>
           <YScale {curentStep} {maxYScale} {height} {heightMargin} />
@@ -91,9 +96,11 @@
         </div>
       </div>
 
+      <!-- Scrolly animation -->
       <Scrolly bind:value={curentStep}>
         {#each initialStageData as stage, i}
           <div class="step step{i + 1}" class:active={curentStep === i}>
+            <!-- Managing types of landscapes -->
             {#if stage.type === "final"}
               <NiceLandscape {width} {height} {curentStep} />
             {:else if stage.type === "flat"}
@@ -124,12 +131,13 @@
       </Scrolly>
     </section>
 
+    <!-- Displaying result -->
     <div class="result">
       <svg {width} height={width * 0.3}>
         <line
           x1={width * (3 / 4) - 10}
           x2={width * (3 / 4) - 10}
-          y1={0}
+          y1="0"
           y2="100%"
           stroke="white"
           stroke-width="3"
@@ -157,26 +165,8 @@
       </svg>
     </div>
 
-    <div class="footer">
-      <div>
-        <p>A project designed and developed by</p>
-        <div>
-          <a href="https://www.wildvariables.com" target="_blank"
-            ><img src={logo} alt="logo Wild Variables" /></a
-          >
-        </div>
-      </div>
-      <p>
-        Source: <a href="https://www.letour.fr/fr/" target="_blank"
-          >www.letour.fr</a
-        >
-        •
-        <a
-          href="https://github.com/wildvariables/tour-de-france-2024"
-          target="_blank">See the code</a
-        >
-      </p>
-    </div>
+    <!-- Footer -->
+    <Footer />
   </div>
 </div>
 
@@ -185,6 +175,7 @@
     background-color: #403b44;
   }
   .container {
+    position: relative;
     max-width: 700px;
     box-shadow: 0px 10px 20px rgb(30, 29, 32);
     margin: 0 auto;
@@ -225,33 +216,5 @@
 
   .result {
     font-family: "Caveat Brush", cursive;
-  }
-  .footer {
-    color: white;
-    background-color: #504c53;
-    padding: 40px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    text-align: center;
-  }
-
-  .footer div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .footer a {
-    color: white;
-    text-align: center;
-    display: inline-table;
-    position: relative;
-  }
-
-  .footer img {
-    width: 120px;
   }
 </style>
