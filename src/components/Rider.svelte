@@ -117,8 +117,9 @@
     y="0"
     transform="translate({$tX},{$tY - 90}) rotate(-90)"
     opacity="0.7"
+    class="rider-name"
   >
-    {rider.name}</text
+    {rider.name} ({rider.team})</text
   >
 {/if}
 
@@ -126,5 +127,9 @@
   g {
     -webkit-filter: drop-shadow(3px -3px 4px rgba(0, 0, 0, 0.2));
     filter: drop-shadow(3px -3px 4px rgba(0, 0, 0, 0.2));
+  }
+
+  .rider-name {
+    text-transform: uppercase;
   }
 </style>
