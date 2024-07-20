@@ -19,14 +19,15 @@
     <svg>
       <g transform="translate({width / 4}, 0) scale({width / 320})"
         ><line
-          x1="0"
-          x2="0"
+          x1="-60"
+          x2="60"
           y1={50}
           y2={50}
           stroke="white"
           stroke-width="4"
           opacity="0.5"
         ></line>
+
         <text
           x="0"
           y={100}

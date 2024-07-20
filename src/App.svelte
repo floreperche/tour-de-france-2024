@@ -5,12 +5,12 @@
   import riders from "./assets/riders.json";
   import Header from "./components/Header.svelte";
   import YScale from "./components/YScale.svelte";
-  import Flat from "./components/Flat.svelte";
-  import Hilly from "./components/Hilly.svelte";
-  import Mountain from "./components/Mountain.svelte";
+  import Flat from "./components/landscapes/Flat.svelte";
+  import Hilly from "./components/landscapes/Hilly.svelte";
+  import Mountain from "./components/landscapes/Mountain.svelte";
   import Rider from "./components/Rider.svelte";
-  import ItalianLandscape from "./components/ItalianLandscape.svelte";
-  import NiceLandscape from "./components/NiceLandscape.svelte";
+  import ItalianLandscape from "./components/landscapes/ItalianLandscape.svelte";
+  import NiceLandscape from "./components/landscapes/NiceLandscape.svelte";
   import logo from "./assets/visuals/logo_wv_png.png";
 
   let width;
@@ -54,8 +54,6 @@
       }
     }
   }
-
-  $: console.log(height);
 </script>
 
 <div class="background">

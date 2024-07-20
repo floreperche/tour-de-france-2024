@@ -1,5 +1,5 @@
 <script>
-  import HeaderLandscape from "./HeaderLandscape.svelte";
+  import HeaderLandscape from "./landscapes/HeaderLandscape.svelte";
 </script>
 
 <div class="header">

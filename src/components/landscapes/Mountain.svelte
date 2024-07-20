@@ -26,8 +26,6 @@
       }
     }
   });
-
-  $: console.log(height);
 </script>
 
 <div class="step-content">

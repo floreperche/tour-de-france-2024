@@ -20,8 +20,6 @@
 
   $: tX.set(xScale(rider.rank));
   $: tY.set(yScale(rider.time));
-
-  // $: console.log(rider.stage);
 </script>
 
 <defs>
