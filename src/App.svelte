@@ -23,7 +23,7 @@
     .domain([0, 4])
     .range([5, width / 2 - 15]);
 
-  $: heightMargin = height && height < 576 ? 40 : 100;
+  $: heightMargin = height && height < 576 ? 40 : 80;
 
   $: yScale = scaleLinear()
     .domain([0, maxYScale])
@@ -56,7 +56,12 @@
 </script>
 
 <div class="background">
-  <div class="container" style="position: relative;">
+  <div
+    class="container"
+    style="position: relative; background-color:{curentStep + 1 === 9
+      ? '#F2F2E3'
+      : '#615968'}"
+  >
     <div class="initial-landscape" style="height: {height}px">
       <ItalianLandscape {width} {height} {curentStep} />
     </div>
@@ -118,7 +123,29 @@
       </Scrolly>
     </section>
 
-    <!-- <div>END</div> -->
+    <div class="footer">
+      <div>
+        <p>A project designed and developed by</p>
+        <div>
+          <a href="https://www.wildvariables.com" target="_blank"
+            ><img
+              src="src\assets\visuals\logo_wv_png.png"
+              alt="logo Wild Variables"
+            /></a
+          >
+        </div>
+      </div>
+      <p>
+        Source: <a href="https://www.letour.fr/fr/" target="_blank"
+          >www.letour.fr</a
+        >
+        •
+        <a
+          href="https://github.com/wildvariables/tour-de-france-2024"
+          target="_blank">See the code</a
+        >
+      </p>
+    </div>
   </div>
 </div>
 
@@ -127,10 +154,10 @@
     background-color: #403b44;
   }
   .container {
-    background-color: #615968;
     max-width: 700px;
     box-shadow: 0px 10px 20px rgb(30, 29, 32);
     margin: 0 auto;
+    transition: all 1000ms ease;
   }
   .initial-landscape {
     position: absolute;
@@ -162,5 +189,34 @@
     justify-content: end;
     margin-left: auto;
     margin-right: 0;
+  }
+
+  .footer {
+    color: white;
+    background-color: #504c53;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .footer div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .footer a {
+    color: white;
+    text-align: center;
+    display: inline-table;
+    position: relative;
+  }
+
+  .footer img {
+    width: 120px;
   }
 </style>

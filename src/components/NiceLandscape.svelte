@@ -34,6 +34,22 @@
         font-size="38"
         opacity="0.5">STAGE 21</text
       >
+      <text
+        x={width / 4}
+        y={height * 1.15}
+        fill="white"
+        text-anchor="middle"
+        font-size="38"
+        opacity="0.5">XXXXXXX</text
+      >
+      <text
+        x={width / 4}
+        y={height * 1.22}
+        fill="white"
+        text-anchor="middle"
+        font-size="38"
+        opacity="0.5">WINS!</text
+      >
     </svg>
   </div>
   <div class="landscape">
@@ -207,17 +223,19 @@
 
   .step-count {
     width: 50vh;
+    height: 100%;
   }
 
   .step-count svg {
     width: 100%;
     max-width: 50vw;
+    height: 100%;
   }
 
   .landscape {
     width: 25%;
     height: 100%;
-    background-color: #478692;
+    background: linear-gradient(#478692 60%, #615968 80%);
   }
   .step-count {
     width: 50%;
