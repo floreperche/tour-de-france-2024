@@ -11,6 +11,7 @@
   import Rider from "./components/Rider.svelte";
   import ItalianLandscape from "./components/ItalianLandscape.svelte";
   import NiceLandscape from "./components/NiceLandscape.svelte";
+  import logo from "./assets/visuals/logo_wv_png.png";
 
   let width;
   let height;
@@ -128,10 +129,7 @@
         <p>A project designed and developed by</p>
         <div>
           <a href="https://www.wildvariables.com" target="_blank"
-            ><img
-              src="src\assets\visuals\logo_wv_png.png"
-              alt="logo Wild Variables"
-            /></a
+            ><img src={logo} alt="logo Wild Variables" /></a
           >
         </div>
       </div>
