@@ -10,6 +10,12 @@
         ><img src={logo} alt="logo Wild Variables" /></a
       >
     </div>
+    <p>
+      You can contact me <a
+        href="https://twitter.com/wildvariables"
+        target="_blank">here</a
+      >
+    </p>
   </div>
   <p>
     Source: <a href="https://www.letour.fr/fr/" target="_blank">www.letour.fr</a
