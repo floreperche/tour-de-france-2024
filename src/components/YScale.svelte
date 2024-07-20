@@ -45,7 +45,7 @@
           <text
             dominant-baseline="middle"
             text-anchor="end"
-            fill="white"
+            fill={curentStep + 1 === 9 ? "#615968" : "white"}
             x={scaleWidth - 20}
             y={yScale(tick) - 8}
             >Leader
@@ -53,7 +53,7 @@
           <text
             dominant-baseline="middle"
             text-anchor="end"
-            fill="white"
+            fill={curentStep + 1 === 9 ? "#615968" : "white"}
             x={scaleWidth - 20}
             y={yScale(tick) + 8}>time</text
           >
@@ -61,7 +61,7 @@
           <text
             text-anchor="end"
             dominant-baseline="middle"
-            fill="white"
+            fill={curentStep + 1 === 9 ? "#615968" : "white"}
             x={scaleWidth - 20}
             y={yScale(tick)}
             >+ {tick / 60}min
@@ -72,7 +72,7 @@
           y={yScale(tick) - 8}
           width="5"
           height="20"
-          fill="white"
+          fill={curentStep + 1 === 9 ? "#615968" : "white"}
           opacity="0.5"
         />
         <rect
@@ -80,7 +80,7 @@
           y={yScale(tick) - 12}
           width="5"
           height="20"
-          fill="white"
+          fill={curentStep + 1 === 9 ? "#615968" : "white"}
           opacity="0.5"
         />
       {/each}

@@ -87,7 +87,7 @@
 
             {#each renderedData as rider}
               {#if !isNaN(xScale(rider.rank)) && !isNaN(yScale(rider.time))}
-                <Rider {rider} {xScale} {yScale} {curentStep} />{/if}
+                <Rider {rider} {xScale} {yScale} {curentStep} {height} />{/if}
             {/each}
           </svg>
         </div>

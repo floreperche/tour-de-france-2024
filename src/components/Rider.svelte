@@ -3,6 +3,7 @@
   export let xScale;
   export let yScale;
   export let curentStep;
+  export let height;
   import { tweened } from "svelte/motion";
   import { cubicInOut } from "svelte/easing";
 
@@ -40,7 +41,7 @@
   </linearGradient>
 </defs>
 
-<g transform="translate({$tX - 13},{$tY - 90}) scale(0.95)">
+<g transform="translate({$tX - 13},{$tY - 90}) scale({(height / 720) * 0.95})">
   <path
     d="M3.38659 42.4306L7.59194 43.1306L4.83868 59.6716C4.83868 59.6716 1.45144 60.9806 0.633337 58.9716C-0.184763 56.9627 3.38659 42.4306 3.38659 42.4306Z"
     fill="#CF8F7B"
@@ -112,7 +113,7 @@
 {#if curentStep >= 0 && rider.rank <= 3}
   <text
     dominant-baseline="middle"
-    fill="white"
+    fill={curentStep + 1 === 9 ? "#615968" : "white"}
     x="20"
     y="0"
     transform="translate({$tX},{$tY - 90}) rotate(-90)"

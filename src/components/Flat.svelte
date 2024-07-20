@@ -76,23 +76,25 @@
 
 <div class="step-content">
   <div class="step-count">
-    <svg>
-      <line
-        x1={width / 4 - 60}
-        x2={width / 4 + 60}
-        y1={50}
-        y2={50}
-        stroke="white"
-        stroke-width="4"
-        opacity="0.5"
-      ></line>
-      <text
-        x={width / 4}
-        y={100}
-        fill="white"
-        text-anchor="middle"
-        font-size="38"
-        opacity="0.5">STAGE {curentStage}</text
+    <svg style="height:100%">
+      <g transform="translate({width / 4}, 0) scale({width / 320})">
+        <line
+          x1="-60"
+          x2="60"
+          y1={50}
+          y2={50}
+          stroke="white"
+          stroke-width="4"
+          opacity="0.5"
+        ></line>
+        <text
+          x="0"
+          y={100}
+          fill="white"
+          text-anchor="middle"
+          font-size="38"
+          opacity="0.5">STAGE {curentStage}</text
+        ></g
       >
     </svg>
   </div>
@@ -123,7 +125,7 @@
             {#each grassData as grass}<g
                 transform="translate({xGrassScale(grass.x)},{yGrassScale(
                   grass.y
-                )})"
+                )}) scale({height / 720})"
               >
                 <!-- Trees -->
                 {#if grass.type === 1}<rect

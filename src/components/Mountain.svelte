@@ -26,27 +26,31 @@
       }
     }
   });
+
+  $: console.log(height);
 </script>
 
 <div class="step-content">
   <div class="step-count">
-    <svg>
-      <line
-        x1={width / 4 - 60}
-        x2={width / 4 + 60}
-        y1={50}
-        y2={50}
-        stroke="white"
-        stroke-width="4"
-        opacity="0.5"
-      ></line>
-      <text
-        x={width / 4}
-        y={100}
-        fill="white"
-        text-anchor="middle"
-        font-size="38"
-        opacity="0.5">STAGE {curentStage}</text
+    <svg style="height:100%">
+      <g transform="translate({width / 4}, 0) scale({width / 320})">
+        <line
+          x1="-60"
+          x2="60"
+          y1={50}
+          y2={50}
+          stroke="white"
+          stroke-width="4"
+          opacity="0.5"
+        ></line>
+        <text
+          x="0"
+          y={100}
+          fill="white"
+          text-anchor="middle"
+          font-size="38"
+          opacity="0.5">STAGE {curentStage}</text
+        ></g
       >
     </svg>
   </div>
@@ -81,9 +85,11 @@
         </defs>
         <!-- Mountain group 1 -->
         {#if !isNaN(xMountainScale(1)) && !isNaN(yMountainScale(1))}<g
-            transform="translate({xMountainScale(0.2)},{yMountainScale(
+            transform="translate({xMountainScale(0.3)},{yMountainScale(
               1
-            )}) scale(0.6)"
+            )}) scale({height < 1200
+              ? (height / 720) * 0.65
+              : (height / 720) * 0.5})"
             ><path
               d="M166.689 36.0646C175.958 33.5778 193.677 112.555 238.656 170.651H0C34.5725 136.254 50.2713 76.1683 62.2659 68.6968C74.2604 61.2254 86.7841 133.14 102.836 136.254C126.472 140.841 144.993 41.8857 166.689 36.0646Z"
               fill="url(#double)"
@@ -141,7 +147,9 @@
           <g
             transform="translate({xMountainScale(0.3)},{yMountainScale(
               0.75
-            )}) scale(0.6)"
+            )}) scale({height < 1200
+              ? (height / 720) * 0.65
+              : (height / 720) * 0.5})"
             ><path
               d="M337.129 116.314H208.139C242.003 74.9122 254.376 2.71899 270.787 2.71899C287.197 2.71899 311.731 81.5697 337.129 116.314Z"
               fill="url(#mediummountain)"
@@ -315,7 +323,9 @@
           <g
             transform="translate({xMountainScale(0.3)},{yMountainScale(
               0.4
-            )}) scale(0.6)"
+            )}) scale({height < 1200
+              ? (height / 720) * 0.65
+              : (height / 720) * 0.5})"
           >
             <path
               d="M292.991 123.595H164C197.864 82.1932 210.238 10 226.648 10C243.059 10 267.593 88.8508 292.991 123.595Z"

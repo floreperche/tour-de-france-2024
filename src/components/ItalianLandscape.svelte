@@ -18,56 +18,55 @@
 <div class="step-content">
   <div class="step-count">
     <svg>
-      <!-- <line
-        x1={width / 4 - 60}
-        x2={width / 4 + 60}
-        y1={50}
-        y2={50}
-        stroke="white"
-        stroke-width="4"
-        opacity="0.5"
-      ></line> -->
-      <text
-        x={width / 4}
-        y="50"
-        fill="white"
-        text-anchor="middle"
-        font-size="38"
-        opacity="0.5">TDF 2024</text
-      >
+      <svg style="height:100%">
+        <g
+          transform="translate({width / 4}, 0) scale({height > 500
+            ? (width / 320) * 0.8
+            : (width / 320) * 0.6})"
+        >
+          <text
+            x="0"
+            y="50"
+            fill="white"
+            text-anchor="middle"
+            font-size="38"
+            opacity="0.5">TDF 2024</text
+          >
 
-      <text
-        x={width / 4}
-        y="100"
-        fill="white"
-        text-anchor="middle"
-        font-size="38"
-        opacity="0.5">STARTS IN</text
-      >
-      <text
-        x={width / 4}
-        y="200"
-        fill="white"
-        text-anchor="middle"
-        font-size="38"
-        opacity="0.5">3</text
-      >
-      <text
-        x={width / 4}
-        y="250"
-        fill="white"
-        text-anchor="middle"
-        font-size="38"
-        opacity="0.5">2</text
-      >
-      <text
-        x={width / 4}
-        y="300"
-        fill="white"
-        text-anchor="middle"
-        font-size="38"
-        opacity="0.5">1</text
-      >
+          <text
+            x="0"
+            y="100"
+            fill="white"
+            text-anchor="middle"
+            font-size="38"
+            opacity="0.5">STARTS IN</text
+          >
+          <text
+            x="0"
+            y="150"
+            fill="white"
+            text-anchor="middle"
+            font-size="38"
+            opacity="0.5">3</text
+          >
+          <text
+            x="0"
+            y="200"
+            fill="white"
+            text-anchor="middle"
+            font-size="38"
+            opacity="0.5">2</text
+          >
+          <text
+            x="0"
+            y="250"
+            fill="white"
+            text-anchor="middle"
+            font-size="38"
+            opacity="0.5">1</text
+          >
+        </g>
+      </svg>
     </svg>
   </div>
   <div class="landscape">
@@ -84,7 +83,7 @@
           <g
             transform="translate({xItalianScale(0.1)},{yItalianScale(
               1
-            )}) scale(0.6)"
+            )}) scale({height > 500 ? (height / 720) * 0.8 : height / 720})"
           >
             <path
               d="M20 65.3978H736.5C734.833 50.2312 727.6 19.8979 712 19.8979C692.5 19.8979 700 37.3978 664 30.3979C628 23.3981 627 -4.60205 570 0.897753C513 6.39756 520.5 23.8979 503 37.3978C485.5 50.8976 466 32.8979 456.5 19.8979C447 6.89795 457.5 7.89795 399 0.897753C340.5 -6.10244 231 44.8978 212.5 37.3978C194 29.8978 191.5 -6.10225 117.5 0.897753C58.3 6.49775 27.8333 46.2311 20 65.3978Z"
@@ -106,7 +105,7 @@
           <g
             transform="translate({xItalianScale(0.2)},{yItalianScale(
               0.95
-            )}) scale(0.6)"
+            )}) scale({height > 500 ? (height / 720) * 0.8 : height / 720})"
           >
             <path
               d="M20 65.3978H736.5C734.833 50.2312 727.6 19.8979 712 19.8979C692.5 19.8979 700 37.3978 664 30.3979C628 23.3981 627 -4.60205 570 0.897753C513 6.39756 520.5 23.8979 503 37.3978C485.5 50.8976 466 32.8979 456.5 19.8979C447 6.89795 457.5 7.89795 399 0.897753C340.5 -6.10244 231 44.8978 212.5 37.3978C194 29.8978 191.5 -6.10225 117.5 0.897753C58.3 6.49775 27.8333 46.2311 20 65.3978Z"
@@ -126,9 +125,8 @@
           </g>
           <!-- Florence -->
           <g
-            transform="translate({xItalianScale(0.3)},{yItalianScale(
-              0.9
-            )}) scale(0.6)"
+            transform="translate({xItalianScale(0.3)},{yItalianScale(0.91)})
+            scale({height > 500 ? (height / 720) * 0.6 : (height / 720) * 1.2})"
           >
             <Florence />
           </g>
@@ -137,7 +135,7 @@
           <g
             transform="translate({xItalianScale(0.1)},{yItalianScale(
               0.6
-            )}) scale(0.6)"
+            )}) scale({height > 500 ? (height / 720) * 0.8 : 0})"
           >
             <path
               d="M20 65.3978H736.5C734.833 50.2312 727.6 19.8979 712 19.8979C692.5 19.8979 700 37.3978 664 30.3979C628 23.3981 627 -4.60205 570 0.897753C513 6.39756 520.5 23.8979 503 37.3978C485.5 50.8976 466 32.8979 456.5 19.8979C447 6.89795 457.5 7.89795 399 0.897753C340.5 -6.10244 231 44.8978 212.5 37.3978C194 29.8978 191.5 -6.10225 117.5 0.897753C58.3 6.49775 27.8333 46.2311 20 65.3978Z"
@@ -158,7 +156,7 @@
           <g
             transform="translate({xItalianScale(0.2)},{yItalianScale(
               0.54
-            )}) scale(0.6)"
+            )}) scale({height > 500 ? (height / 720) * 0.8 : 0})"
           >
             <path
               d="M20 65.3978H736.5C734.833 50.2312 727.6 19.8979 712 19.8979C692.5 19.8979 700 37.3978 664 30.3979C628 23.3981 627 -4.60205 570 0.897753C513 6.39756 520.5 23.8979 503 37.3978C485.5 50.8976 466 32.8979 456.5 19.8979C447 6.89795 457.5 7.89795 399 0.897753C340.5 -6.10244 231 44.8978 212.5 37.3978C194 29.8978 191.5 -6.10225 117.5 0.897753C58.3 6.49775 27.8333 46.2311 20 65.3978Z"
@@ -178,9 +176,9 @@
           </g>
           <!-- Italian field -->
           <g
-            transform="translate({xItalianScale(0.3)},{yItalianScale(
+            transform="translate({xItalianScale(0.2)},{yItalianScale(
               0.5
-            )}) scale(0.8)"
+            )}) scale({height > 500 ? (height / 720) * 0.8 : 0})"
           >
             <ItalianField />
           </g>{/if}

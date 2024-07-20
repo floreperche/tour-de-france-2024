@@ -55,23 +55,25 @@
 
 <div class="step-content">
   <div class="step-count">
-    <svg>
-      <line
-        x1={width / 4 - 60}
-        x2={width / 4 + 60}
-        y1={50}
-        y2={50}
-        stroke="white"
-        stroke-width="4"
-        opacity="0.5"
-      ></line>
-      <text
-        x={width / 4}
-        y={100}
-        fill="white"
-        text-anchor="middle"
-        font-size="38"
-        opacity="0.5">STAGE {curentStage}</text
+    <svg style="height:100%">
+      <g transform="translate({width / 4}, 0) scale({width / 320})">
+        <line
+          x1="-60"
+          x2="60"
+          y1={50}
+          y2={50}
+          stroke={curentStage === 9 ? "#615968" : "white"}
+          stroke-width="4"
+          opacity="0.5"
+        ></line>
+        <text
+          x="0"
+          y={100}
+          fill={curentStage === 9 ? "#615968" : "white"}
+          text-anchor="middle"
+          font-size="38"
+          opacity="0.5">STAGE {curentStage}</text
+        ></g
       >
     </svg>
   </div>
@@ -96,7 +98,9 @@
         {#if !isNaN(xHillScale(1)) && !isNaN(yHillScale(1))}
           {#if hillData}
             {#each hillData as hill}<g
-                transform="translate({xHillScale(hill.x)},{yHillScale(hill.y)})"
+                transform="translate({xHillScale(hill.x) + 20},{yHillScale(
+                  hill.y
+                )}) scale({height / 720})"
               >
                 <!-- Hills with 3 sizes -->
                 {#if hill.type === 1}{#if hill.size === 1}
