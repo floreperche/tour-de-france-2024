@@ -54,6 +54,8 @@
       }
     }
   }
+
+  $: console.log(height);
 </script>
 
 <div class="background">
@@ -172,6 +174,7 @@
 
   .chart {
     width: 100%;
+    height: 100vh;
     display: flex;
   }
   .viz {
