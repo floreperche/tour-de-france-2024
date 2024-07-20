@@ -20,7 +20,7 @@
           />
         </svg>
       </div>
-      <div><p class="subtitle">A scrolly visualisation</p></div>
+      <div><p class="subtitle">A scrollytelling visualisation</p></div>
     </div>
     <div class="header-landscape">
       <HeaderLandscape />

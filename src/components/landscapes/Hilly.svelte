@@ -41,6 +41,8 @@
     .domain([0, 1])
     .range([height * 1.2, 0]);
 
+  $: xStageScale = scaleLinear().domain([0, 21]).range([-60, 60]);
+
   // Background with transitions
   let background = "#609978";
   $: initialStageData.map((e) => {
@@ -61,6 +63,15 @@
   <div class="step-count">
     <svg>
       <g transform="translate({width / 4}, 0) scale({width / 320})">
+        <line
+          x1="-60"
+          x2={xStageScale(curentStage)}
+          y1={50}
+          y2={50}
+          stroke={curentStage === 9 ? "#615968" : "white"}
+          stroke-width="4"
+          opacity="0.5"
+        ></line>
         <line
           x1="-60"
           x2="60"
