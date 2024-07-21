@@ -32,7 +32,7 @@
     <p>
       (Re)play the fight for the podium and see how Tadej Pogačar (UAD) won his
       third Tour de France. Stage by stage, he overtook his historical rival
-      Jonas Vingegaard (TVL) and first-time participation Remco Evenepoel (SOQ).
+      Jonas Vingegaard (TVL) and first-time participant Remco Evenepoel (SOQ).
     </p>
 
     <div class="scroll-indicator">
