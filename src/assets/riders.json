@@ -24,7 +24,7 @@
   {
     "id": 11,
     "name": "T. Pogačar",
-    "team": "UAE",
+    "team": "UAD",
     "jersey": "url(#uae)",
     "helmet": "#D9D9D9",
     "short": "#202020",
@@ -35,7 +35,7 @@
   {
     "id": 71,
     "name": "R. EVENEPOEL",
-    "team": "SQS",
+    "team": "SOQ",
     "jersey": "url(#sqs)",
     "helmet": "#0362C8",
     "short": "#2B385A",
@@ -57,7 +57,7 @@
   {
     "id": 181,
     "name": "R. BARDET",
-    "team": "AAA",
+    "team": "DFP",
     "jersey": "#2480B0",
     "helmet": "#F09E62",
     "short": "#3A5E89",
@@ -68,7 +68,7 @@
   {
     "id": 187,
     "name": "F. VAN DEN BROEK",
-    "team": "AAA",
+    "team": "DFP",
     "jersey": "#2480B0",
     "helmet": "#F09E62",
     "short": "#3A5E89",

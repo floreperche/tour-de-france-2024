@@ -30,9 +30,13 @@
   <!-- Description -->
   <div class="description">
     <p>
-      (Re)discover how xxxx xxxx won its xx Tour de France, overtaking his
-      historical rival xxx xxxx and lorem ipsum dolor sit amet, consectetur
-      adipiscing elit. Fusce pretium interdum nisl vitae ultrices.
+      <!-- (Re)discover the fight for the podium and how Tadej Pogačar (UAD) won his
+      third Tour de France. Stage by stage, he overtook his historical rival
+      Jonas Vingegaard (TVL) and Remco Evenepoel (SOQ), who admirably concluded
+      his first participation.  -->
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor, magna
+      a pulvinar mattis, lacus nulla maximus nisl, et elementum mauris est quis lacus.
+      Mauris fermentum, justo non varius scelerisque, risus magna congue nisi.
     </p>
 
     <div class="scroll-indicator">
@@ -138,10 +142,6 @@
   }
 
   @media (max-height: 576px) {
-    .header .title .headline {
-      display: flex;
-    }
-
     .header .title p {
       font-size: 36px;
     }
@@ -177,6 +177,9 @@
     }
   }
   @media (max-height: 400px) {
+    .header .title .headline {
+      display: flex;
+    }
     .description {
       height: 20vh;
     }
@@ -199,7 +202,7 @@
     }
   }
 
-  @media (min-height: 800px) {
+  @media (min-height: 900px) {
     .header .title p {
       font-size: 70px;
     }

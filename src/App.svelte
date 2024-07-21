@@ -33,7 +33,10 @@
 
   // Data
   $: {
-    if (curentStep === undefined) {
+    if (
+      curentStep === undefined &&
+      (renderedData === undefined || renderedData[0].rank != 21)
+    ) {
       renderedData = riders;
     } else {
       initialStageData.map((e) => {
@@ -151,7 +154,10 @@
             text-anchor="middle"
             dominant-baseline="end"
             font-size="38"
-            opacity="0.5">XXXXXXX</text
+            opacity="0.5"
+          >
+            <!-- POGAČAR -->
+            XXXXXXX</text
           >
           <text
             x="0"
