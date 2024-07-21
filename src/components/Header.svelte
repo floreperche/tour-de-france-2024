@@ -30,13 +30,10 @@
   <!-- Description -->
   <div class="description">
     <p>
-      <!-- (Re)discover the fight for the podium and how Tadej Pogačar (UAD) won his
+      (Re)play the fight for the podium and how Tadej Pogačar (UAD) won his
       third Tour de France. Stage by stage, he overtook his historical rival
-      Jonas Vingegaard (TVL) and Remco Evenepoel (SOQ), who admirably concluded
-      his first participation.  -->
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor, magna
-      a pulvinar mattis, lacus nulla maximus nisl, et elementum mauris est quis lacus.
-      Mauris fermentum, justo non varius scelerisque, risus magna congue nisi.
+      Jonas Vingegaard (TVL) and Remco Evenepoel (SOQ), who concluded his first
+      participation.
     </p>
 
     <div class="scroll-indicator">

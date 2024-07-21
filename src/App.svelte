@@ -38,6 +38,7 @@
       (renderedData === undefined || renderedData[0].rank != 21)
     ) {
       renderedData = riders;
+      maxYScale = 130;
     } else {
       initialStageData.map((e) => {
         if (e.id === curentStep + 1) {
@@ -52,10 +53,12 @@
           time: displayedResults[i].time,
         };
       });
-      if (curentStep > 11) {
+      if (curentStep < 12) {
+        maxYScale = 130;
+      } else if (curentStep < 19) {
         maxYScale = 500;
       } else {
-        maxYScale = 130;
+        maxYScale = 660;
       }
     }
   }
@@ -156,9 +159,8 @@
             font-size="38"
             opacity="0.5"
           >
-            <!-- POGAČAR -->
-            XXXXXXX</text
-          >
+            POGAČAR
+          </text>
           <text
             x="0"
             y="80"
