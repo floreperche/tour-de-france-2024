@@ -2,7 +2,7 @@
 
 ![project preview](./src/assets/visuals/tfd-media.gif)
 
-A [scrollytelling data visualisation project](https://wildvariables.github.io/tour-de-france-2024/) made with Svelte and d3.js to visualise the race for the Yellow Jersey in the 2024 edition.
+A [scrollytelling data visualisation project](https://floreperche.github.io/tour-de-france-2024/) made with Svelte and d3.js to visualise the race for the Yellow Jersey in the 2024 edition.
 
 ## Installation
 
